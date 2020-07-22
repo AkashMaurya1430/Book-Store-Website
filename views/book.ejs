@@ -5,10 +5,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/solid.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Marcellus SC' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+    <link rel="stylesheet" href="/book.css">
 </head>
 
 <body>
-    <h1>Read</h1>
+    <button type="button" class="btn btn-primary" onclick="openModal()">
+        Launch demo modal
+    </button>
+    <div class="bookModalParent" id="bookModalParent" style="display: none;">
+        <div class="modal-header">
+            <button class="nextPageBtn"> <i class="fas fa-arrow-right"></i> </button>
+            <!-- <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true" onclick="closeModal()">&times;</span>
+            </button> -->
+            <button class="btn closeModalBtn" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row no-gutters justify-content-center chapterTitle">
+                Proluge
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eum omnis repudiandae libero, laboriosam
+                est eos debitis fugit quos reiciendis exercitationem nam rem cupiditate nesciunt? Impedit eum quas
+                aliquid
+                aliquam?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque sint ipsum, distinctio omnis quasi
+                nulla
+                quod. Ducimus magnam eaque possimus similique saepe placeat ipsa mollitia, blanditiis amet officia
+                nostrum?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero autem est quis aut dignissimos quam
+                impedit,
+                itaque, perspiciatis, iste repudiandae laboriosam corrupti excepturi blanditiis enim eveniet architecto
+                nisi
+                suscipit recusandae.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eum omnis repudiandae libero,
+                laboriosam
+                est eos debitis fugit quos reiciendis exercitationem nam rem cupiditate nesciunt? Impedit eum quas
+                aliquid
+                aliquam?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque sint ipsum, distinctio omnis quasi
+                nulla
+                quod. Ducimus magnam eaque possimus similique saepe placeat ipsa mollitia, blanditiis amet officia
+                nostrum?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero autem est quis aut dignissimos quam
+                impedit,
+                itaque, perspiciatis, iste repudiandae laboriosam corrupti excepturi blanditiis enim eveniet architecto
+                nisi
+                suscipit recusandae.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eum omnis repudiandae libero,
+                laboriosam
+                est eos debitis fugit quos reiciendis exercitationem nam rem cupiditate nesciunt? Impedit eum quas
+                aliquid
+                aliquam?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque sint ipsum, distinctio omnis quasi
+                nulla
+                quod. Ducimus magnam eaque possimus similique saepe placeat ipsa mollitia, blanditiis amet officia
+                nostrum?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero autem est quis aut dignissimos quam
+                impedit,
+                itaque, perspiciatis, iste repudiandae laboriosam corrupti excepturi blanditiis enim eveniet architecto
+                nisi
+                suscipit recusandae.
+            </p>
+
+        </div>
+    </div>
 </body>
+
+<script>
+    function openModal() {
+        document.getElementById("bookModalParent").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("bookModalParent").style.display = "none";
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
 </html>

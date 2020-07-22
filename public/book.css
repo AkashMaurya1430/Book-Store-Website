@@ -1,0 +1,56 @@
+.bookModalParent{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+
+.modal-header{padding: 0.5rem 1rem;
+    box-shadow: 0px 0px 10px 2px grey;
+}
+
+.modal-body{
+    padding: 0 15rem;
+    font-size: 1.5rem;
+    text-align: justify;
+    color: #7c7c7c;
+    overflow: auto;
+    height: 85%;
+    font-family: "alex bush";
+}
+
+.closeModalBtn{
+    background-color: transparent;
+    border:1px solid rgb(168, 104, 19);
+    margin-right: 8rem;
+}
+
+.nextPageBtn{
+    padding: 0.5rem;
+    /* border-radius: 50%; */
+    background-color: transparent;
+    border:1px solid rgb(168, 104, 19);
+    color: rgb(168, 104, 19);
+    /* width: 3rem; */
+    font-size: 1rem;
+    font-weight: 300;
+    width: 3rem;
+    margin-left: 8rem;
+}
+
+.nextPageBtn:hover ,.closeModalBtn:hover{
+    background-color: rgb(168, 104, 19);
+    color: white;
+    transition: 0.4s;
+}
+
+.chapterTitle{
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: black;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-family: "marcellus";
+}
