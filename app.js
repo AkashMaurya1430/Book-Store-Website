@@ -58,6 +58,14 @@ mongoose.connection.on("disconnected", () => {
 //     }
 // })
 
+//Add book
+// var book = new Book({
+//     name: "Wisdom of the Ancients",
+//     category: "Science Fiction",
+//     cost: "Free",
+//     description: "A possible future in less than 500 words, if plastic wins."
+// });
+
 let port = (process.env.PORT || '3000')
 
 app.listen(port, process.env.IP, function () {

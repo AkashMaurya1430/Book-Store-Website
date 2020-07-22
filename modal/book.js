@@ -10,7 +10,7 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: [
-            "Beginner",
+            "Science Fiction",
             "Fictional",
         ],
     },
@@ -23,20 +23,30 @@ const bookSchema = new mongoose.Schema({
         ]
     },
     price: {
-        type: Number,
+        type: Number
     },
     description: {
         type: String,
         required: true,
         text: true,
     },
+    chapter: [{
+        name: {
+            type: String,
+            required: true
+        },
+        story: {
+            type: String,
+            required: true
+        }
+    }],
     review: {
         type: String,
     },
-    pages: {
-        type: Number,
-        required: true,
-    },
+    // pages: {
+    //     type: Number,
+    //     required: true,
+    // },
     imageUrl: {
         type: String,
         required: true,
