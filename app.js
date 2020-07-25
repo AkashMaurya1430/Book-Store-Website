@@ -1,70 +1,155 @@
 var express = require('express');
 var app = express();
 var path = require("path");
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var Book = require('./modal/book');
-var User = require('./modal/user');
+// var User = require('./modal/user');
+const user = require("./routes/user");
+const InitiateMongoServer = require("./config/db");
+const User = require('./modal/User');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'js')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Initiate Mongo Server
+InitiateMongoServer();
+
 // view engine setup
 app.set("view engine", "ejs");
 
-app.get('/', (req, res) => {
-    res.render('homepage');
-});
+// Middleware
+app.use(bodyParser.json());
+
+
+app.get("/addbook", function (req, res) {
+    res.render("index")
+})
+
+
 app.get('/readbook', (req, res) => {
     res.render('book');
 })
 
-const MONGODB_URI = "mongodb+srv://Akash3030:Akash3030@book-store.uxbek.mongodb.net/book-store?retryWrites=true&w=majority";
-
-mongoose.connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
+app.get('/login', (req, res) => {
+    res.render('login')
 });
 
-mongoose.connection.on('connected', () => {
-    console.log("DB connected");
+app.get("/home", function (req, res) {
+    Book.find({ category: "Adventure" }).then((book, err) => {
+        // console.log(book);
+        Book.find({ category: "Fantasy" }).then((Fantasybooks, err) => {
+            // console.log(Fantasybooks);
+            Book.find({ category: "Horror" }).then((Horrorbooks, err) => {
+                // console.log(Horrorbooks);
+                Book.find({ category: "Romance" }).then((Romancebooks, err) => {
+                    // console.log(Romancebooks);
+                    Book.find({ category: "ScienceFiction" }).then((ScienceFictionbooks, err) => {
+                        // console.log(ScienceFictionbooks);
+                        Book.find({ category: "Mystery" }).then((Mysterybooks, err) => {
+                            // console.log(Mysterybooks);
+                            res.render("Home", {
+                                // name : book.name,
+                                // author : book.author,
+                                // category : book.category,
+                                // description : book.description,
+                                // pages : book.pages,
+                                // imageUrl : book.imageUrl  
+                                booker: book,
+                                Fantasybooks,
+                                Horrorbooks,
+                                Romancebooks,
+                                ScienceFictionbooks,
+                                Mysterybooks
+
+
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+
 });
 
-mongoose.connection.on("error", (err) => {
-    console.log(err);
-});
 
-mongoose.connection.on("disconnected", () => {
-    console.log("Disconnected");
-});
+app.get("/Adventure", function (req, res) {
+    Book.find({ category: "Adventure" }).then((book, err) => {
+        // console.log(book);
+        res.render("Adventure", {
+            booker: book
+        })
+    })
+})
+
+app.get("/Horror", function (req, res) {
+    Book.find({ category: "Horror" }).then((book, err) => {
+        // console.log(book);
+        res.render("Horror", {
+            booker: book
+        })
+    })
+})
+
+app.get("/Fantasy", function (req, res) {
+    Book.find({ category: "Fantasy" }).then((book, err) => {
+        // console.log(book);
+        res.render("Fantasy", {
+            booker: book
+        })
+    })
+})
+
+app.get("/Mystery", function (req, res) {
+    Book.find({ category: "Mystery" }).then((book, err) => {
+        // console.log(book);
+        res.render("Mystery", {
+            booker: book
+        })
+    })
+})
+
+app.get("/Romance", function (req, res) {
+    Book.find({ category: "Romance" }).then((book, err) => {
+        // console.log(book);
+        res.render("Romance", {
+            booker: book
+        })
+    })
+})
 
 
-// Create User
-// var akash = new User({
-//     name: "Akash",
-//     email: "akashmauyra@1212",
-//     password: "Pass@123"
-// })
+app.get("/ScienceFiction", function (req, res) {
+    Book.find({ category: "ScienceFiction" }).then((book, err) => {
+        // console.log(book);
+        res.render("ScienceFiction", {
+            booker: book
+        })
+    })
+})
 
-// Save User
-// akash.save((err) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         console.log("user saved");
-//     }
-// })
+app.get("/free", function (req, res) {
+    Book.find({ Price: "Free" }).then((book, err) => {
+        // console.log(book);
+        res.render("free", {
+            booker: book
+        })
+    })
+})
 
-//Add book
-// var book = new Book({
-//     name: "Wisdom of the Ancients",
-//     category: "Science Fiction",
-//     cost: "Free",
-//     description: "A possible future in less than 500 words, if plastic wins."
-// });
+app.get("/Paid", function (req, res) {
+    Book.find({ Price: "Paid" }).then((book, err) => {
+        // console.log(book);
+        res.render("Paid", {
+            booker: book
+        })
+    })
+})
+
 
 let port = (process.env.PORT || '3000')
 

@@ -22,8 +22,8 @@ const bookSchema = new mongoose.Schema({
             "Free"
         ]
     },
-    price: {
-        type: Number
+    Price: {
+        type: String
     },
     description: {
         type: String,

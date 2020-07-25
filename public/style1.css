@@ -1,0 +1,80 @@
+body{
+    overflow-x: hidden;
+}
+
+.logo{
+    width: 69%;
+}
+
+.carousel-inner1{
+    width: 60%;
+    margin-left: 18rem;
+    margin-top: 5rem;
+    border-radius: 2rem;
+    height: 29rem;
+   
+}
+.carousel-control-prev1{
+    margin-left: 13rem;
+}
+
+.carousel-control-next1{
+    margin-right: 15rem;
+}
+
+.welcome{
+    margin-top: 7rem;
+    margin-left: 8rem;
+}
+
+.adh3{
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    
+}
+
+.wide{
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+
+
+
+.footer{
+    background-color: #eeeeee;
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+}
+.f,.t,.i,.y{
+   padding-right: 2rem;
+   color: black;
+}
+
+.headercp{
+    padding-top: 1rem;
+}
+
+.s:hover{
+    color:skyblue;
+}
+
+.i:hover{
+    color: purple;
+}
+
+.y:hover{
+    color: red;
+}
+
+.col1{
+    padding-left: 12rem;
+    margin-left: -5rem;
+}
+
+.col2{
+    margin-left: -11rem;
+}
