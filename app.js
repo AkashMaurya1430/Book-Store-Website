@@ -37,7 +37,7 @@ app.get('/login', (req, res) => {
     res.render('login')
 });
 
-app.get("/home", function (req, res) {
+app.get("/Home", function (req, res) {
     Book.find({ category: "Adventure" }).then((book, err) => {
         // console.log(book);
         Book.find({ category: "Fantasy" }).then((Fantasybooks, err) => {
@@ -150,43 +150,48 @@ app.get("/Paid", function (req, res) {
 })
 
 
-app.get("/login", function(req,res){
+app.get("/login", function (req, res) {
     res.render("login")
 })
 
-app.get("/signUp", function(req,res){
+app.get("/signUp", function (req, res) {
     res.render("signup")
 })
 
 
-app.post("/signup", function(req,res){
+app.post("/signup", function (req, res) {
     const newUser = new User({
-        email : req.body.username,
-        password : req.body.password,
-        name : req.body.name
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name
     });
-    newUser.save(function(err){
-        if(err) {
+    olduser = User.findOne({ email: req.body.email })
+    if (olduser) {
+        res.redirect("login")
+        return (console.log("User already Exist"))
+    }
+    newUser.save(function (err) {
+        if (err) {
             console.log(err);
-            
-        }else{
-            res.render("Home")
+
+        } else {
+            res.redirect("Home")
         }
     });
 })
 
-app.post("/login", function(req,res){
-    const username = req.body.username;
-    const  password = req.body.password
+app.post("/login", function (req, res) {
+    const email = req.body.email;
+    const password = req.body.password;
 
-    User.findOne({email: username}, function(err,foundUser){
-        if (err){
+    User.findOne({ email: email }, function (err, foundUser) {
+        if (err) {
             console.log(err);
-            
-        }else{
-            if(foundUser){
-                if(foundUser.password === password){
-                    res.render("Home");
+
+        } else {
+            if (foundUser) {
+                if (foundUser.password === password) {
+                    res.redirect("Home");
                 }
             }
         }

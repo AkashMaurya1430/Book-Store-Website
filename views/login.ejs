@@ -24,12 +24,12 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
 
-                <form class="needs-validation" novalidate style="padding-top: 10px;">
+                <form action="/login" method="POST" class="needs-validation" novalidate style="padding-top: 10px;">
                     <div class="form-row space">
                         <div class="col-12">
 
-                            <input type="text" class="form-control" id="validationCustom01" placeholder="Email"
-                                required>
+                            <input type="text" name="email" class="form-control" id="validationCustom01"
+                                placeholder="Email" required>
                             <div class="invalid-feedback">
                                 Enter your Email!!
                             </div>
@@ -38,8 +38,8 @@
                     <div class="form-row space">
                         <div class="col-12">
 
-                            <input type="text" class="form-control" id="validationCustom01" placeholder="Enter password"
-                                required>
+                            <input type="text" name="password" class="form-control" id="validationCustom01"
+                                placeholder="Enter password" required>
                             <div class="invalid-feedback">
                                 Enter your password!!
                             </div>
@@ -59,12 +59,12 @@
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <form class="needs-validation" novalidate style="padding-top: 10px;">
+                <form action="/signup" method="POST" class="needs-validation" novalidate style="padding-top: 10px;">
                     <div class="form-row">
                         <div class="col-12">
 
-                            <input type="text" class="form-control" id="validationCustom01" placeholder="First name"
-                                required>
+                            <input type="text" name="name" class="form-control" id="validationCustom01"
+                                placeholder="First name" required>
                             <div class="invalid-feedback">
                                 Please enter a name
                             </div>
@@ -73,8 +73,8 @@
                     <div class="form-row">
                         <div class="col-12">
 
-                            <input type="email" class="form-control" id="validationCustom01" placeholder="Email"
-                                required>
+                            <input type="email" name="email" class="form-control" id="validationCustom01"
+                                placeholder="Email" required>
                             <div class="invalid-feedback">
                                 Please enter your email
                             </div>
@@ -83,8 +83,8 @@
                     <div class="form-row">
                         <div class="col-12">
 
-                            <input type="password" class="form-control" id="validationCustom01" placeholder="Password"
-                                required>
+                            <input type="password" name="password" class="form-control" id="validationCustom01"
+                                placeholder="Password" required>
                             <div class="invalid-feedback">
                                 Please enter a password
                             </div>
