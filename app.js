@@ -4,7 +4,6 @@ var path = require("path");
 // var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var Book = require('./modal/book');
-// var User = require('./modal/user');
 const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
 const User = require('./modal/User');
@@ -156,3 +155,28 @@ let port = (process.env.PORT || '3000')
 app.listen(port, process.env.IP, function () {
     console.log("server is running");
 });
+
+
+
+// const book = new Book({
+
+//     name: "Akash",
+//     category: "Fictional",
+//     // author: "akash",
+//     description: "kuch nahi",
+//     review: "mast hai",
+//     imageUrl: "abhi nahi hai",
+//     cost: "Free",
+//     chapter: [
+//         {
+//             name: "chap 1",
+//             story: " 11111111"
+//         },
+//         {
+//             name: "chap 2",
+//             story: " 222"
+//         }
+//     ]
+
+// });
+// book.save();
