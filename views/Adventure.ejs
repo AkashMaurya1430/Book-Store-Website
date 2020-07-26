@@ -12,13 +12,15 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
                        <!-- Navbar -->
 
     
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 2px;">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" >
         <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,7 +61,7 @@
               </li>
             <li class="nav-item">
               <form action="/writer" method="get">
-              <button style="color: grey;" type="submit" class="btn btn-link">Creat Your Own Book</button>
+              <button style="color: grey;" type="submit" class="btn btn-link">Create Your Own Book</button>
             </form>
             </li>
             <li class="nav-item dropdown">
@@ -81,23 +83,23 @@
 
 
       <div class="welcome">
-        <h1>Adventure Books</h1>
+        <h3 class="text-center title">Adventure Books</h1>
         <hr width="80%" style="margin-left: -1rem;">
     </div>
     <%  booker.forEach(function(book){ %>
 <div class="row" style="margin-top: 5rem;margin-bottom: 5rem;">
 
-<div class="col-lg-6 col1">
-    <div class="container">
+<div class="col-lg-6 col-md-12 col-sm-12 col1">
+    <!-- <div class="container">
         <div class="Adventure">
            
            <div class="container">
        </div>
        </div>
-    </div>
+    </div> -->
          <a href=""> <img src="<%=book.imageUrl %>" class="wide card-img-top" style="width: 49%;"  alt=""></a>
         </div>
-        <div class="col-lg-6 col2">
+        <div class="col-lg-6 col-md-12 col-sm-12 col2">
             <div class="card-body">
               <h5 class="card-title"><%= book.name %> </h5>
               <p style="color: grey;"> <%= book.author %> </p>
@@ -112,19 +114,16 @@
         
         </div>
         <% }) %>
-         
 
-
-<div class="footer" style="overflow-x: hidden;overflow-y: hidden; margin-top: 2rem;">
+<footer class="footer">
   <div class="footer-contain">
- <a class="f"  href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
- <a class="t"  href="https://www.twitter.com/"><i class="social-icon fab fa-twitter fa-1x"></i></a>
- <a class="i" href="https://www.instagram.com/"><i class="social-icon fab fa-instagram fa-1x"></i></a>
- <a class="y"  href="https://www.youtube.com/"><i class="social-icon fab fa-youtube fa-1x"></i></a>
- <p class="headercp">© Copyright 2020 Book Rack</p>
-  </div>
-</div>
-
+    <a class="f"  href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
+    <a class="t"  href="https://www.twitter.com/"><i class="social-icon fab fa-twitter fa-1x"></i></a>
+    <a class="i" href="https://www.instagram.com/"><i class="social-icon fab fa-instagram fa-1x"></i></a>
+    <a class="y"  href="https://www.youtube.com/"><i class="social-icon fab fa-youtube fa-1x"></i></a>
+    <p class="headercp">© Copyright 2020 Book Rack</p>
+     </div>
+</footer>
 
 
  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

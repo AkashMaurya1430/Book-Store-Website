@@ -1,11 +1,17 @@
-body{
-    overflow-x: hidden;
-}
 
+body{
+    /* overflow-x: hidden; */
+    width: 100%;
+}
+nav{
+    padding: 2px; background-color: #e4eced;font-size: large;
+}
 .logo{
     width: 69%;
 }
-
+.card-body{
+    padding: 15px;
+}
 .carousel-inner1{
     width: 60%;
     margin-left: 18rem;
@@ -33,7 +39,9 @@ body{
     font-weight: bold;
     
 }
-
+.title{
+    font-family: 'Dancing Script', cursive;
+  }
 .wide{
     
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -42,9 +50,8 @@ body{
 }
 
 
-
-.footer{
-    background-color: #eeeeee;
+footer{
+    background-color: #b5c6c9;
     text-align: center;
     width: 100%;
     padding-top: 2rem;
@@ -77,4 +84,80 @@ body{
 
 .col2{
     margin-left: -11rem;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .col1{
+        padding-left: 12rem;
+    }
+    .col2{
+        padding-left: 12rem;
+    }  
+    *{
+        box-sizing: content-box;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .col1{
+        padding-left: 12rem;
+    }
+    .col2{
+        padding-left: 12rem;
+    }  
+    *{
+        box-sizing: content-box;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col1{
+        padding-left: 12rem;
+    }
+    .col2{
+        padding-left: 12rem;
+    }  
+    *{
+        box-sizing: content-box;
+    }
+    .footer{
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .card-body{
+        padding-left: 51px;
+        margin-left: 29px;
+    }
+    p{
+        padding-left: 20px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    *{
+        box-sizing: border-box;
+    }
+    .col1{
+        padding-left: 12rem;
+    }
+    .col2{
+        padding-left: 0;
+    } 
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    *{
+        box-sizing: border-box;
+    }
+    .col1{
+        padding-left: 12rem;
+    }
+    .col2{
+        padding-left: 0;
+    } 
 }
