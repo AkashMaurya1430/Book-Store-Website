@@ -150,6 +150,49 @@ app.get("/Paid", function (req, res) {
 })
 
 
+app.get("/login", function(req,res){
+    res.render("login")
+})
+
+app.get("/signUp", function(req,res){
+    res.render("signup")
+})
+
+
+app.post("/signup", function(req,res){
+    const newUser = new User({
+        email : req.body.username,
+        password : req.body.password,
+        name : req.body.name
+    });
+    newUser.save(function(err){
+        if(err) {
+            console.log(err);
+            
+        }else{
+            res.render("Home")
+        }
+    });
+})
+
+app.post("/login", function(req,res){
+    const username = req.body.username;
+    const  password = req.body.password
+
+    User.findOne({email: username}, function(err,foundUser){
+        if (err){
+            console.log(err);
+            
+        }else{
+            if(foundUser){
+                if(foundUser.password === password){
+                    res.render("Home");
+                }
+            }
+        }
+    })
+})
+
 let port = (process.env.PORT || '3000')
 
 app.listen(port, process.env.IP, function () {
