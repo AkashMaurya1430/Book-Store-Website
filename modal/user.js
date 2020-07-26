@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
+var encrypt = require('mongoose-encryption');
 const userSchema = new mongoose.Schema({
-    username: {
+    name: {
         type: String,
         required: true
     },
@@ -11,13 +12,14 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now()
     }
 
 });
 
 
-module.exports = mongoose.model("User", userSchema);;
+
+const secret = "Thisisourlittlesecret"
+userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password'] });
+
+module.exports = mongoose.model("User", userSchema);
+// const User = new mongoose.model("User", userSchema);

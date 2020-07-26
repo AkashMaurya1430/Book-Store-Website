@@ -2,9 +2,11 @@
 body{
     /* overflow-x: hidden; */
     width: 100%;
+    font-family: 'Roboto', sans-serif;
+    
 }
 nav{
-    padding: 2px; background-color: #e4eced;font-size: large;
+    padding: 2px; background-color: #7db0bd;font-size: large;
 }
 .logo{
     width: 69%;
@@ -29,8 +31,8 @@ nav{
 }
 
 .welcome{
-    margin-top: 7rem;
-    margin-left: 8rem;
+    margin-top: 5rem;
+    margin-left: 1rem;
 }
 
 .adh3{
@@ -40,7 +42,10 @@ nav{
     
 }
 .title{
-    font-family: 'Dancing Script', cursive;
+    padding-top: 45px;
+    font-weight: 600;
+    font-size: 40px;
+    
   }
 .wide{
     
@@ -48,10 +53,16 @@ nav{
     border-radius: 5px;
 
 }
-
+.jumbotron{
+   
+    color: #48575a;
+}
+.Read{
+    float: right;
+}
 
 footer{
-    background-color: #b5c6c9;
+    background-color: #deeced;
     text-align: center;
     width: 100%;
     padding-top: 2rem;
@@ -96,6 +107,10 @@ footer{
     *{
         box-sizing: content-box;
     }
+    .card-img-top{
+        
+        box-shadow: 5px 10px 8px #888888;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -109,7 +124,10 @@ footer{
     *{
         box-sizing: content-box;
     }
-
+    .card-img-top{
+        
+        box-shadow: 5px 10px 8px #888888;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -134,6 +152,10 @@ footer{
     p{
         padding-left: 20px;
     }
+    .card-img-top{
+        margin-left:8rem ;
+        box-shadow: 5px 10px 8px #888888;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -147,6 +169,11 @@ footer{
     .col2{
         padding-left: 0;
     } 
+    .card-img-top{
+        margin-left:3rem ;
+        width: 10rem;
+        box-shadow: 5px 10px 8px #888888;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -155,7 +182,7 @@ footer{
         box-sizing: border-box;
     }
     .col1{
-        padding-left: 12rem;
+        padding-left: 21rem;
     }
     .col2{
         padding-left: 0;

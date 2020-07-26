@@ -11,19 +11,24 @@ const bookSchema = new mongoose.Schema({
         required: true,
         enum: [
             "Science Fiction",
-            "Fictional",
+            "Fantasy",
+            "Adventure",
+            "Mystery",
+            "Romance",
+            "Horror"
         ],
     },
-    cost: {
-        type: String,
-        required: true,
-        enum: [
-            "Paid",
-            "Free"
-        ]
-    },
+    // cost: {
+    //     type: String,
+    //     required: true,
+    //     enum: [
+    //         "Paid",
+    //         "Free"
+    //     ]
+    // },
     Price: {
-        type: String
+        type: String,
+        required: true
     },
     description: {
         type: String,
@@ -31,7 +36,7 @@ const bookSchema = new mongoose.Schema({
         text: true,
     },
     chapter: [{
-        name: {
+        chapterName: {
             type: String,
             required: true
         },
@@ -40,9 +45,6 @@ const bookSchema = new mongoose.Schema({
             required: true
         }
     }],
-    review: {
-        type: String,
-    },
     // pages: {
     //     type: Number,
     //     required: true,

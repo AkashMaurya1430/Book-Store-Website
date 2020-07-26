@@ -13,11 +13,11 @@ body{
 }
 .carousel-inner{
     border-radius: 20px;
-    height: 500px;
-    padding-top: 20px;
+    
+    margin-top: 30px;
 }
 .carousel-control-prev,.carousel-control-next{
-    
+    padding-top: 75px;
 }
 
 .space{
@@ -42,18 +42,18 @@ body{
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
-    width: 80%;
     margin-bottom: 2rem;
     transition: .5s ease;
   backface-visibility: hidden;
 }
-
-.btn{
-    border-radius: 39px;
+.carousel{
+    margin-top:20px ;
 }
 
+
+
 .footer{
-    background-color: #b5c6c9;
+    background-color: #deeced;
     text-align: center;
     width: 151%;
     padding-top: 2rem;

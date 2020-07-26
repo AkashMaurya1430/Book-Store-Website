@@ -11,7 +11,7 @@
   <title>Book Rack</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="/Home.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
     integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -25,7 +25,7 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 2px; background-color: #e4eced;font-size: large;">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style=" padding: 2px; background-color: #7db0bd;font-size: large;">
     <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@ Browse
         </li>
         <li class="nav-item">
           <form action="/writer" method="get">
-            <button style="color: grey;" type="submit" class="btn btn-link"><i>Create Your Own Book</i></button>
+            <button style="color: #3e585e;" type="submit" class="btn btn-link">Create Your Own Book</button>
           </form>
         </li>
         <li class="nav-item dropdown">
@@ -144,18 +144,18 @@ Name
 
         <div class="col-lg-2 col-sm-12">
           <a href=""> <img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-          <form action="/Adventure" method="get">
-            <button type="submit" class="btn btn-light btn-sm"><%= book.category  %> </button>
-          </form>
-          <form action="/<%= book.Price %>" method="get">
-            <button type="button" class="btn btn-light btn-sm"><%= book.Price %> </button>
-          </form>
+          
+            <form action="/Adventure" method="get" style="padding-bottom: 10px;">
+              <button type="submit" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.category  %> </button>
+            </form>
+            <form action="/<%= book.Price %>" method="get">
+              <button type="button" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.Price %> </button>
+            </form>
+          
           <div class="middle">
             <div class="text"><button class="btn btn-primary ">Read More</button></div>
           </div>
         </div>
-
-
         <% }) %>
       </div>
     </div>
@@ -173,11 +173,11 @@ Name
           <%  Fantasybooks.forEach(function(book){ %>
           <div class="col-lg-2 col-sm-12">
             <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-            <form action="/Fantasy" method="get">
-              <button type="submit" class="btn btn-light btn-sm"><%= book.category  %> </button>
+            <form action="/Fantasy" method="get" style="padding-bottom: 10px;">
+              <button type="submit" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.category  %> </button>
             </form>
             <form action="/<%= book.Price %>" method="get">
-              <button type="button" class="btn btn-light btn-sm"><%= book.Price %> </button>
+              <button type="button" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.Price %> </button>
             </form>
             <div class="middle">
               <div class="text"><button class="btn btn-primary ">Read More</button></div>
@@ -200,11 +200,11 @@ Name
           <%  Horrorbooks.forEach(function(book){ %>
           <div class="col-lg-2 col-sm-12">
             <a href=""> <img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-            <form action="/Horror" method="get">
-              <button type="submit" class="btn btn-light btn-sm"><%= book.category  %> </button>
+            <form action="/Horror" method="get" style="padding-bottom: 10px;">
+              <button type="submit" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.category  %> </button>
             </form>
             <form action="/<%= book.Price %>" method="get">
-              <button type="button" class="btn btn-light btn-sm"><%= book.Price %> </button>
+              <button type="button" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.Price %> </button>
             </form>
             <div class="middle">
               <div class="text"><button class="btn btn-primary ">Read More</button></div>
@@ -229,11 +229,11 @@ Name
             <%  Romancebooks.forEach(function(book){ %>
             <div class="col-lg-2 col-sm-12">
               <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-              <form action="/Romance" method="get">
-                <button type="submit" class="btn btn-light btn-sm"><%= book.category  %> </button>
+              <form action="/Romance" method="get" style="padding-bottom: 10px;">
+                <button type="submit" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.category  %> </button>
               </form>
               <form action="/<%= book.Price %>" method="get">
-                <button type="submit" class="btn btn-light btn-sm"><%= book.Price %> </button>
+                <button type="submit" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.Price %> </button>
               </form>
               <div class="middle">
                 <div class="text"><button class="btn btn-primary ">Read More</button></div>
@@ -258,11 +258,11 @@ Name
               <%  ScienceFictionbooks.forEach(function(book){ %>
               <div class="col-lg-2 col-sm-12">
                 <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-                <form action="/ScienceFiction" method="get">
-                  <button type="submit" class="btn btn-light btn-sm"><%= book.category  %> </button>
+                <form action="/ScienceFiction" method="get" style="padding-bottom: 10px;">
+                  <button type="submit" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.category  %> </button>
                 </form>
                 <form action="/<%= book.Price %>" method="get">
-                  <button type="submit" class="btn btn-light btn-sm"><%= book.Price %> </button>
+                  <button type="submit" class="btn btn-light btn-sm"  style="border-radius: 100px;"><%= book.Price %> </button>
                 </form>
                 <div class="middle">
                   <div class="text"><button class="btn btn-primary ">Read More</button></div>
@@ -287,11 +287,11 @@ Name
                 <%  Mysterybooks.forEach(function(book){ %>
                 <div class="col-lg-2 col-sm-12">
                   <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-                  <form action="/Mystery" method="get">
-                    <button type="submit" class="btn btn-light btn-sm"><%= book.category  %> </button>
+                  <form action="/Mystery" method="get" style="padding-bottom: 10px;">
+                    <button type="submit" class="btn btn-light btn-sm"   style="border-radius: 100px;"><%= book.category  %> </button>
                   </form>
                   <form action="/<%= book.Price %>" method="get">
-                    <button type="submit" class="btn btn-light btn-sm"><%= book.Price %> </button>
+                    <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %> </button>
                   </form>
                   <div class="middle">
                     <div class="text"><button class="btn btn-primary ">Read More</button></div>
@@ -303,9 +303,14 @@ Name
             </div>
           </div>
 
-          
+          <button type="button" class="btn btn-primary" onclick="openModal()">
+            Launch demo modal
+          </button>
 
-          <div class="footer" style="overflow-x: hidden;overflow-y: hidden; margin-top: 2rem;">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Launch demo
+          </button>
+          <footer class="footer">
             <div class="footer-contain text-center">
               <a class="f" href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
               <a class="t" href="https://www.twitter.com/"><i class="social-icon fab fa-twitter fa-1x"></i></a>
@@ -313,10 +318,111 @@ Name
               <a class="y" href="https://www.youtube.com/"><i class="social-icon fab fa-youtube fa-1x"></i></a>
               <p class="headercp">© Copyright 2020 Book Rack</p>
             </div>
+          </footer>
+
+          <!-- show Book Details modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 60%;">
+              <div class="modal-content">
+                <div class="modal-header pb-0">
+                  <div class="row no-gutters">
+                    <h3> Add New Book</h3>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <div class="row no-gutters">
+                    <form class="needs-validation w-100" novalidate>
+                      <div class="form-row">
+                        <!-- Book Name -->
+                        <div class="col-6">
+                          <label for="bookName">Book name</label>
+                          <input type="text" class="form-control" id="bookName" placeholder="Book name" name="name"
+                            required>
+                          <div class="invalid-feedback">
+                            Enter Name of Your Book.
+                          </div>
+                        </div>
+                        <!-- Category -->
+                        <div class="col-6">
+                          <label for="category">Category</label>
+                          <input type="text" class="form-control" id="category" placeholder="Category" name="category"
+                            list="genre" required>
+                          <div class="invalid-feedback">
+                            Select a Category
+                          </div>
+                          <datalist id="genre">
+                            <option value="Science Fiction"></option>
+                            <option value="Fantasy"></option>
+                            <option value="Adventure"></option>
+                            <option value="Mystery"></option>
+                            <option value="Romance"></option>
+                            <option value="Horror"></option>
+                          </datalist>
+                        </div>
+                      </div>
+                      <div class="form-row mt-2">
+                        <div class="col-12">
+                          <label for="category">Description</label>
+                          <textarea name="description" id="" class="form-control col-12" required></textarea>
+                          <div class="invalid-feedback">
+                            Enter Description
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row mt-2">
+                        <div class="col-6">
+                          <label for="price">Price</label>
+                          <input type="text" class="form-control" id="price" placeholder="Enter cost" name="price"
+                            required>
+                          <div class="invalid-feedback">
+                            Enter Cost
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <label for="price">Upload Cover Image</label>
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01"
+                              aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row mt-2">
+                        <div class="col-12">
+                          <h5>Add Chapters</h5>
+                        </div>
+                        <div class="col-6">
+                          <div class="row no-gutters">
+                            <label for="chapterTitle">Chapter<span>1</span> Title</label>
+                            <input type="text" class="form-control" id="chapterTitle" placeholder="Enter cost"
+                              name="chapterName" required>
+                            <div class="invalid-feedback">
+                              Give Chapter Title
+                            </div>
+                          </div>
+                          <div class="row no-gutters mt-2">
+                            <label for="story">Story</label>
+                            <textarea name="story" id="story" class="form-control col-12" required></textarea>
+                            <div class="invalid-feedback">
+                              Type your Story
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-success">Publish Book</button>
+                </div>
+              </div>
+            </div>
           </div>
 
-
-
+          <script src="/homepage.js"></script>
           <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
           <script src="jquery.min.js"></script>
           <script src="numscroller-1.0.js"></script>

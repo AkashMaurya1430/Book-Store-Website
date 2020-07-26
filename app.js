@@ -4,7 +4,6 @@ var path = require("path");
 // var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var Book = require('./modal/book');
-// var User = require('./modal/user');
 const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
 const User = require('./modal/User');
@@ -38,7 +37,7 @@ app.get('/login', (req, res) => {
     res.render('login')
 });
 
-app.get("/home", function (req, res) {
+app.get("/Home", function (req, res) {
     Book.find({ category: "Adventure" }).then((book, err) => {
         // console.log(book);
         Book.find({ category: "Fantasy" }).then((Fantasybooks, err) => {
@@ -151,8 +150,81 @@ app.get("/Paid", function (req, res) {
 })
 
 
+app.get("/login", function (req, res) {
+    res.render("login")
+})
+
+app.get("/signUp", function (req, res) {
+    res.render("signup")
+})
+
+
+app.post("/signup", function (req, res) {
+    const newUser = new User({
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name
+    });
+    olduser = User.findOne({ email: req.body.email })
+    if (olduser) {
+        res.redirect("login")
+        return (console.log("User already Exist"))
+    }
+    newUser.save(function (err) {
+        if (err) {
+            console.log(err);
+
+        } else {
+            res.redirect("Home")
+        }
+    });
+})
+
+app.post("/login", function (req, res) {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    User.findOne({ email: email }, function (err, foundUser) {
+        if (err) {
+            console.log(err);
+
+        } else {
+            if (foundUser) {
+                if (foundUser.password === password) {
+                    res.redirect("Home");
+                }
+            }
+        }
+    })
+})
+
 let port = (process.env.PORT || '3000')
 
 app.listen(port, process.env.IP, function () {
     console.log("server is running");
 });
+
+
+
+// const book = new Book({
+
+//     name: "Akash",
+//     category: "Fictional",
+//     // author: "akash",
+//     description: "kuch nahi",
+//     review: "mast hai",
+//     imageUrl: "abhi nahi hai",
+//     cost: "Free",
+//     chapter: [
+//         {
+//             name: "chap 1",
+//             story: " 11111111"
+//         },
+//         {
+//             name: "chap 2",
+//             story: " 222"
+//         }
+//     ]
+
+// });
+// book.save();
