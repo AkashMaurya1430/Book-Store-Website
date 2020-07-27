@@ -26,8 +26,6 @@
 <body>
   <!-- Navbar -->
 
-
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 2px;">
     <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -120,7 +118,7 @@
   <!-- Welcome -->
 
   <div class="welcome">
-    <h1>Welcome home,Name</h1>
+    <h1>Welcome home, <%= userData.name %></h1>
     <hr width="80%" style="margin-left: -1rem;">
   </div>
 
@@ -362,13 +360,16 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-row mt-2">
+
+                      <!-- Story -->
+                      <div class="form-row mt-2" id="addChapterDiv">
                         <div class="col-12">
-                          <h5>Add Chapters</h5>
+                          <h5 style="float: left;">Add Chapters</h5>
+                          <div class="btn btn-primary float-right" onclick="addChapter()">Add More Chapter's</div>
                         </div>
                         <div class="col-6">
                           <div class="row no-gutters">
-                            <label for="chapterTitle">Chapter<span>1</span> Title</label>
+                            <label for="chapterTitle">Chapter Title</label>
                             <input type="text" class="form-control" id="chapterTitle" placeholder="Enter cost"
                               name="chapterName" required>
                             <div class="invalid-feedback">
@@ -383,6 +384,23 @@
                             </div>
                           </div>
                         </div>
+                        <div class="col-6">
+                          <div class="row no-gutters">
+                            <label for="chapterTitle">Chapter Title</label>
+                            <input type="text" class="form-control" id="chapterTitle" placeholder="Title"
+                              name="chapterName">
+                            <div class="invalid-feedback">
+                              Give Chapter Title
+                            </div>
+                          </div>
+                          <div class="row no-gutters mt-2">
+                            <label for="story">Story</label>
+                            <textarea name="story" id="story" class="form-control col-12" ]></textarea>
+                            <div class="invalid-feedback">
+                              Type your Story
+                            </div>
+                          </div>
+                        </div>
 
                       </div>
                     </form>
@@ -390,7 +408,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-success">Publish Book</button>
+                  <button type="submit" class="btn btn-success">Publish Book</button>
                 </div>
               </div>
             </div>

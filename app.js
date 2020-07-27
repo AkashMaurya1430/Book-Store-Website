@@ -7,6 +7,9 @@ var Book = require('./modal/book');
 const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
 const User = require('./modal/User');
+const { use } = require('./routes/user');
+var userData = {};
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'assets')));
@@ -38,33 +41,36 @@ app.get('/login', (req, res) => {
 });
 
 app.get("/Home", function (req, res) {
-    Book.find({ category: "Adventure" }).then((book, err) => {
-        // console.log(book);
-        Book.find({ category: "Fantasy" }).then((Fantasybooks, err) => {
-            // console.log(Fantasybooks);
-            Book.find({ category: "Horror" }).then((Horrorbooks, err) => {
-                // console.log(Horrorbooks);
-                Book.find({ category: "Romance" }).then((Romancebooks, err) => {
-                    // console.log(Romancebooks);
-                    Book.find({ category: "ScienceFiction" }).then((ScienceFictionbooks, err) => {
-                        // console.log(ScienceFictionbooks);
-                        Book.find({ category: "Mystery" }).then((Mysterybooks, err) => {
-                            // console.log(Mysterybooks);
-                            res.render("Home", {
-                                // name : book.name,
-                                // author : book.author,
-                                // category : book.category,
-                                // description : book.description,
-                                // pages : book.pages,
-                                // imageUrl : book.imageUrl  
-                                booker: book,
-                                Fantasybooks,
-                                Horrorbooks,
-                                Romancebooks,
-                                ScienceFictionbooks,
-                                Mysterybooks
-
-
+    User.findOne({
+        email: userData.email
+    }).then((user, err) => {
+        Book.find({ category: "Adventure" }).then((book, err) => {
+            // console.log(book);
+            Book.find({ category: "Fantasy" }).then((Fantasybooks, err) => {
+                // console.log(Fantasybooks);
+                Book.find({ category: "Horror" }).then((Horrorbooks, err) => {
+                    // console.log(Horrorbooks);
+                    Book.find({ category: "Romance" }).then((Romancebooks, err) => {
+                        // console.log(Romancebooks);
+                        Book.find({ category: "ScienceFiction" }).then((ScienceFictionbooks, err) => {
+                            // console.log(ScienceFictionbooks);
+                            Book.find({ category: "Mystery" }).then((Mysterybooks, err) => {
+                                // console.log(Mysterybooks);
+                                res.render("Home", {
+                                    // name : book.name,
+                                    // author : book.author,
+                                    // category : book.category,
+                                    // description : book.description,
+                                    // pages : book.pages,
+                                    // imageUrl : book.imageUrl 
+                                    userData: user,
+                                    booker: book,
+                                    Fantasybooks,
+                                    Horrorbooks,
+                                    Romancebooks,
+                                    ScienceFictionbooks,
+                                    Mysterybooks
+                                });
                             });
                         });
                     });
@@ -192,11 +198,15 @@ app.post("/login", function (req, res) {
             if (foundUser) {
                 if (foundUser.password === password) {
                     res.redirect("Home");
+                    userData = foundUser;
                 }
             }
         }
     })
 })
+
+
+module.exports = { userData: "userData" };
 
 let port = (process.env.PORT || '3000')
 
