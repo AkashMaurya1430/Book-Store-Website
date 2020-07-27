@@ -1,30 +1,28 @@
 body{
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f2;
 }
 
 .logo{
     width: 69%;
 }
 
-.carousel-inner1{
-    width: 60%;
-    margin-left: 18rem;
-    margin-top: 5rem;
-    border-radius: 2rem;
-    height: 29rem;
-   
+.carousel{
+    padding-top: 50px;
 }
-.carousel-control-prev1{
-    margin-left: 13rem;
+.carousel-inner{
+    border-radius: 20px;
+    
+    margin-top: 30px;
 }
-
-.carousel-control-next1{
-    margin-right: 15rem;
+.carousel-control-prev,.carousel-control-next{
+    padding-top: 75px;
 }
 
-.welcome{
-    margin-top: 7rem;
-    margin-left: 8rem;
+.space{
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .adh3{
@@ -45,15 +43,17 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
     margin-bottom: 2rem;
+    transition: .5s ease;
+  backface-visibility: hidden;
+}
+.carousel{
+    margin-top:20px ;
 }
 
-.wide:hover{
-    
-}
 
 
 .footer{
-    background-color: #eeeeee;
+    background-color: #deeced;
     text-align: center;
     width: 151%;
     padding-top: 2rem;
@@ -79,4 +79,56 @@ body{
 .y:hover{
     color: red;
 }
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+   .image:hover {
+    opacity: 0.3;
+  }
+  
+   .middle:hover {
+    opacity: 1;
+  }
+  button{
+      background-color: dodgerblue;
+      color: floralwhite;
+  }
+  .text {
+    
+    color: white;
+   
+    
+  }
+  .jumbotron{
+      width: 100%;
+  }
+  .title{
+    font-family: 'Dancing Script', cursive;
+  }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
+
 
