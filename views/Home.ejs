@@ -33,7 +33,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <form action="/Home" method="get">
             <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i>
@@ -73,6 +73,8 @@
           <button style="color: #3e585e;" type="submit" class="btn btn-link" data-toggle="modal"
             data-target="#addBookModal">Create Your Own Book</button>
         </li>
+      </ul>
+      <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">
@@ -143,12 +145,14 @@
         <%  booker.forEach(function(book){ %>
 
         <div class="col-lg-2 col-sm-12">
-          <a href=""> <img src="<%=book.imageUrl %>" class="wide" alt=""></a>
+          <div class="cont">
+            <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+            <div class="middle">
+              <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+            </div>
+          </div>
 
-          <!-- <form action="/Adventure" method="get" style="padding-bottom: 10px;">
-            <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-            </button>
-          </form> -->
+
           <form action="/<%= book.Price %>" method="get">
             <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
               <%if(book.Price==0){ %>
@@ -179,11 +183,14 @@
         <div class="row">
           <%  Fantasybooks.forEach(function(book){ %>
           <div class="col-lg-2 col-sm-12">
-            <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-            <!-- <form action="/Fantasy" method="get" style="padding-bottom: 10px;">
-              <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-              </button>
-            </form> -->
+            <div class="cont">
+              <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+              <div class="middle">
+                <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+              </div>
+            </div>
+
+
             <form action="/<%= book.Price %>" method="get">
               <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
                 Free
@@ -213,11 +220,13 @@
         <div class="row">
           <%  Horrorbooks.forEach(function(book){ %>
           <div class="col-lg-2 col-sm-12">
-            <a href=""> <img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-            <!-- <form action="/Horror" method="get" style="padding-bottom: 10px;">
-              <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-              </button>
-            </form> -->
+            <div class="cont">
+              <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+              <div class="middle">
+                <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+              </div>
+            </div>
+
             <form action="/<%= book.Price %>" method="get">
               <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
                 Free
@@ -249,11 +258,13 @@
           <div class="row">
             <%  Romancebooks.forEach(function(book){ %>
             <div class="col-lg-2 col-sm-12">
-              <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-              <!-- <form action="/Romance" method="get" style="padding-bottom: 10px;">
-                <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-                </button>
-              </form> -->
+              <div class="cont">
+                <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+                <div class="middle">
+                  <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                </div>
+              </div>
+
               <form action="/<%= book.Price %>" method="get">
                 <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
                   Free
@@ -285,11 +296,13 @@
             <div class="row">
               <%  ScienceFictionbooks.forEach(function(book){ %>
               <div class="col-lg-2 col-sm-12">
-                <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-                <!-- <form action="/ScienceFiction" method="get" style="padding-bottom: 10px;">
-                  <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-                  </button>
-                </form> -->
+                <div class="cont">
+                  <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+                  <div class="middle">
+                    <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                  </div>
+                </div>
+
                 <form action="/<%= book.Price %>" method="get">
                   <button type="submit" class="btn btn-light btn-sm"
                     style="border-radius: 100px;"><%if(book.Price==0){ %>
@@ -322,11 +335,13 @@
               <div class="row">
                 <%  Mysterybooks.forEach(function(book){ %>
                 <div class="col-lg-2 col-sm-12">
-                  <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-                  <!-- <form action="/Mystery" method="get" style="padding-bottom: 10px;">
-                    <button type="submit" class="btn btn-light btn-sm"
-                      style="border-radius: 100px;"><%= book.category  %> </button>
-                  </form> -->
+                  <div class="cont">
+                    <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+                    <div class="middle">
+                      <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                    </div>
+                  </div>
+
                   <form action="/<%= book.Price %>" method="get">
                     <button type="submit" class="btn btn-light btn-sm"
                       style="border-radius: 100px;"><%if(book.Price==0){ %>

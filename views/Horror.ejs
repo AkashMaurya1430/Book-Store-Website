@@ -28,73 +28,74 @@
 </head>
 
 <body>
-  <!-- Navbar -->
+                       <!-- Navbar -->
 
+    
 
+                       <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 2px;">
+                        <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                              <form action="/Home" method="get">
+                                <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
+                              </form>
+                            </li>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fa fa-search" aria-hidden="true"></i> Browse
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <form action="/Adventure" method="get">
+                                  <button type="submit" class=" nav-link btn btn-link">Adventure</button>
+                                </form>
+                                <form action="/ScienceFiction" method="get">
+                                  <button type="submit" class="nav-link btn btn-link">Science Fiction</button>
+                                </form>
+                                <form action="/Fantasy" method="get">
+                                  <button type="submit" class="nav-link btn btn-link">Fantasy</button>
+                                </form>
+                                <form action="/Romance" method="get">
+                                  <button type="submit" class="nav-link btn btn-link">Romance</button>
+                                </form>
+                                <form action="/Horror" method="get">
+                                  <button type="submit" class="nav-link btn btn-link">Horror</button>
+                                </form>
+                                <form action="/Mystery" method="get">
+                                  <button type="submit" class="nav-link btn btn-link">Mystery</button>
+                                </form>
+                                 
+                                  
+                              </li>
+                              <li class="nav-item">
+                                <form action="/writer" method="get">
+                                  <button style="color: #3e585e;" type="submit" class="btn btn-link">Create Your Own Book</button>
+                                </form>
+                              </li>
+                          </ul>
+                          <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user" aria-hidden="true"></i> <%= userData.name %>
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">My Account</a>
+                            <a class="dropdown-item" href="#">Science Fiction</a>
+                            <a class="dropdown-item" href="#">Fantasy</a>
+                            <a class="dropdown-item" href="#">Romance</a>
+                            <a class="dropdown-item" href="#">Horror</a>
+                
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 2px;">
-    <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <form action="/Home" method="get">
-            <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i>
-              Home</button>
-          </form>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-search" aria-hidden="true"></i> Browse
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <form action="/Adventure" method="get">
-              <button type="submit" class=" nav-link btn btn-link">Adventure</button>
-            </form>
-            <form action="/ScienceFiction" method="get">
-              <button type="submit" class="nav-link btn btn-link">Science Fiction</button>
-            </form>
-            <form action="/Fantasy" method="get">
-              <button type="submit" class="nav-link btn btn-link">Fantasy</button>
-            </form>
-            <form action="/Romance" method="get">
-              <button type="submit" class="nav-link btn btn-link">Romance</button>
-            </form>
-            <form action="/Horror" method="get">
-              <button type="submit" class="nav-link btn btn-link">Horror</button>
-            </form>
-            <form action="/Mystery" method="get">
-              <button type="submit" class="nav-link btn btn-link">Mystery</button>
-            </form>
-
-
-        </li>
-        <li class="nav-item">
-          <form action="/writer" method="get">
-            <button style="color: #3e585e;" type="submit" class="btn btn-link">Create Your Own Book</button>
-          </form>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-user" aria-hidden="true"></i> <%= userData.name %>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">My Account</a>
-            <a class="dropdown-item" href="#">Science Fiction</a>
-            <a class="dropdown-item" href="#">Fantasy</a>
-            <a class="dropdown-item" href="#">Romance</a>
-            <a class="dropdown-item" href="#">Horror</a>
-
-        </li>
-      </ul>
-    </div>
-  </nav>
+        
 
 
 
@@ -124,8 +125,8 @@
         <p class="card-text"><%= book.description %> </p>
         <div class="row">
           <form action="/<%= book.Price %>" method="get">
-            <button type="button" style=" border-radius: 39px;" class="btn btn-light btn-sm"><%= book.category  %>
-            </button>
+            <!-- <button type="button" style=" border-radius: 39px;" class="btn btn-light btn-sm"><%= book.category  %>
+            </button> -->
             <button type="submit" style=" border-radius: 39px;" class="btn btn-light btn-sm"><%= book.Price %>
             </button><br><br>
           </form>
