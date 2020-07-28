@@ -70,15 +70,14 @@
 
         </li>
         <li class="nav-item">
-          <form action="/writer" method="get">
-            <button style="color: #3e585e;" type="submit" class="btn btn-link">Create Your Own Book</button>
-          </form>
+          <button style="color: #3e585e;" type="submit" class="btn btn-link" data-toggle="modal"
+            data-target="#addBookModal">Create Your Own Book</button>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+            aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">
             <i class="fa fa-user" aria-hidden="true"></i>
-            Name
+            <%= userData.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">My Account</a>
@@ -126,7 +125,7 @@
     <!-- Welcome -->
 
     <div class="welcome">
-      <h1>Welcome home, <%= userData.name %></h1>
+      <h1 style="text-transform: capitalize;">Welcome home, <%= userData.name %></h1>
       <hr width="80%" style="margin-left: -1rem;">
     </div>
   </div>
@@ -146,10 +145,10 @@
         <div class="col-lg-2 col-sm-12">
           <a href=""> <img src="<%=book.imageUrl %>" class="wide" alt=""></a>
 
-          <form action="/Adventure" method="get" style="padding-bottom: 10px;">
+          <!-- <form action="/Adventure" method="get" style="padding-bottom: 10px;">
             <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
             </button>
-          </form>
+          </form> -->
           <form action="/<%= book.Price %>" method="get">
             <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %> </button>
           </form>
@@ -175,10 +174,10 @@
           <%  Fantasybooks.forEach(function(book){ %>
           <div class="col-lg-2 col-sm-12">
             <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-            <form action="/Fantasy" method="get" style="padding-bottom: 10px;">
+            <!-- <form action="/Fantasy" method="get" style="padding-bottom: 10px;">
               <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
               </button>
-            </form>
+            </form> -->
             <form action="/<%= book.Price %>" method="get">
               <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
               </button>
@@ -204,10 +203,10 @@
           <%  Horrorbooks.forEach(function(book){ %>
           <div class="col-lg-2 col-sm-12">
             <a href=""> <img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-            <form action="/Horror" method="get" style="padding-bottom: 10px;">
+            <!-- <form action="/Horror" method="get" style="padding-bottom: 10px;">
               <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
               </button>
-            </form>
+            </form> -->
             <form action="/<%= book.Price %>" method="get">
               <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
               </button>
@@ -235,10 +234,10 @@
             <%  Romancebooks.forEach(function(book){ %>
             <div class="col-lg-2 col-sm-12">
               <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-              <form action="/Romance" method="get" style="padding-bottom: 10px;">
+              <!-- <form action="/Romance" method="get" style="padding-bottom: 10px;">
                 <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
                 </button>
-              </form>
+              </form> -->
               <form action="/<%= book.Price %>" method="get">
                 <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
                 </button>
@@ -266,10 +265,10 @@
               <%  ScienceFictionbooks.forEach(function(book){ %>
               <div class="col-lg-2 col-sm-12">
                 <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-                <form action="/ScienceFiction" method="get" style="padding-bottom: 10px;">
+                <!-- <form action="/ScienceFiction" method="get" style="padding-bottom: 10px;">
                   <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
                   </button>
-                </form>
+                </form> -->
                 <form action="/<%= book.Price %>" method="get">
                   <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
                   </button>
@@ -297,10 +296,10 @@
                 <%  Mysterybooks.forEach(function(book){ %>
                 <div class="col-lg-2 col-sm-12">
                   <a href=""><img src="<%=book.imageUrl %>" class="wide" alt=""></a>
-                  <form action="/Mystery" method="get" style="padding-bottom: 10px;">
+                  <!-- <form action="/Mystery" method="get" style="padding-bottom: 10px;">
                     <button type="submit" class="btn btn-light btn-sm"
                       style="border-radius: 100px;"><%= book.category  %> </button>
-                  </form>
+                  </form> -->
                   <form action="/<%= book.Price %>" method="get">
                     <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
                     </button>
@@ -315,25 +314,19 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-primary" onclick="openModal()">
-            Launch demo modal
-          </button>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            Launch demo
-          </button>
           <footer class="footer">
             <div class="footer-contain text-center">
               <a class="f" href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
               <a class="t" href="https://www.twitter.com/"><i class="social-icon fab fa-twitter fa-1x"></i></a>
               <a class="i" href="https://www.instagram.com/"><i class="social-icon fab fa-instagram fa-1x"></i></a>
               <a class="y" href="https://www.youtube.com/"><i class="social-icon fab fa-youtube fa-1x"></i></a>
-              <p class="headercp">© Copyright 2020 Book Rack</p>
+              <p class="headercp mb-0">© Copyright 2020 Book Rack</p>
             </div>
           </footer>
 
           <!-- show Book Details modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+          <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 60%;">
               <div class="modal-content">
@@ -344,7 +337,7 @@
                 </div>
                 <div class="modal-body">
                   <div class="row no-gutters">
-                    <form class="needs-validation w-100" novalidate>
+                    <form class="needs-validation w-100" id="addBookForm" action="/uploadbook" method="POST" novalidate>
                       <div class="form-row">
                         <!-- Book Name -->
                         <div class="col-6">
@@ -385,18 +378,17 @@
                       <div class="form-row mt-2">
                         <div class="col-6">
                           <label for="price">Price</label>
-                          <input type="text" class="form-control" id="price" placeholder="Enter cost" name="price"
+                          <input type="text" class="form-control" id="price" placeholder="Enter cost" name="Price"
                             required>
                           <div class="invalid-feedback">
                             Enter Cost
                           </div>
                         </div>
                         <div class="col-6">
-                          <label for="price">Upload Cover Image</label>
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01"
-                              aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          <label for="imageUrl">Upload Cover Image Url</label>
+                          <input type="text" class="form-control" id="form-control" name="imageUrl" required>
+                          <div class="invalid-feedback">
+                            Choose image
                           </div>
                         </div>
                       </div>
@@ -441,14 +433,13 @@
                             </div>
                           </div>
                         </div>
-
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Publish Book</button>
                       </div>
                     </form>
                   </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-success">Publish Book</button>
                 </div>
               </div>
             </div>
