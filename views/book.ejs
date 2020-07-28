@@ -15,83 +15,47 @@
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary" onclick="openModal()">
+    <!-- <button type="button" class="btn btn-primary" onclick="openModal()">
         Launch demo modal
-    </button>
-    <div class="bookModalParent" id="bookModalParent" style="display: none;">
+    </button> -->
+    <div class="bookModalParent" id="bookModalParent">
         <div class="modal-header">
-            <button class="nextPageBtn"> <i class="fas fa-arrow-right"></i> </button>
-            <!-- <button type="button" class="close" aria-label="Close">
-                <span aria-hidden="true" onclick="closeModal()">&times;</span>
-            </button> -->
-            <button class="btn closeModalBtn" onclick="closeModal()">
-                <i class="fas fa-times"></i>
-            </button>
+            <!-- <button class="nextPageBtn"> <i class="fas fa-arrow-right"></i> </button> -->
+            <div class="row no-gutters w-100">
+                <div class="col-11 text-center">
+                    <h2 class="pt-1 mb-0" style="margin-left: 7rem;"><%= book.name%></h2>
+                </div>
+                <div class="col-1">
+                    <form action="/Home" method="GET">
+                        <button class="btn closeModalBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="modal-body">
-            <div class="row no-gutters justify-content-center chapterTitle">
-                Proluge
+            <% for(i=0;i<=book.chapter.length-1;i++){ %>
+            <div class="row no-gutters justify-content-center chapterTitle" style="padding: 0 15rem;">
+                <%= book.chapter[i].chapterName %>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eum omnis repudiandae libero, laboriosam
-                est eos debitis fugit quos reiciendis exercitationem nam rem cupiditate nesciunt? Impedit eum quas
-                aliquid
-                aliquam?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque sint ipsum, distinctio omnis quasi
-                nulla
-                quod. Ducimus magnam eaque possimus similique saepe placeat ipsa mollitia, blanditiis amet officia
-                nostrum?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero autem est quis aut dignissimos quam
-                impedit,
-                itaque, perspiciatis, iste repudiandae laboriosam corrupti excepturi blanditiis enim eveniet architecto
-                nisi
-                suscipit recusandae.
+            <p class="storyPart">
+                <%= book.chapter[i].story %>
             </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eum omnis repudiandae libero,
-                laboriosam
-                est eos debitis fugit quos reiciendis exercitationem nam rem cupiditate nesciunt? Impedit eum quas
-                aliquid
-                aliquam?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque sint ipsum, distinctio omnis quasi
-                nulla
-                quod. Ducimus magnam eaque possimus similique saepe placeat ipsa mollitia, blanditiis amet officia
-                nostrum?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero autem est quis aut dignissimos quam
-                impedit,
-                itaque, perspiciatis, iste repudiandae laboriosam corrupti excepturi blanditiis enim eveniet architecto
-                nisi
-                suscipit recusandae.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eum omnis repudiandae libero,
-                laboriosam
-                est eos debitis fugit quos reiciendis exercitationem nam rem cupiditate nesciunt? Impedit eum quas
-                aliquid
-                aliquam?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque sint ipsum, distinctio omnis quasi
-                nulla
-                quod. Ducimus magnam eaque possimus similique saepe placeat ipsa mollitia, blanditiis amet officia
-                nostrum?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero autem est quis aut dignissimos quam
-                impedit,
-                itaque, perspiciatis, iste repudiandae laboriosam corrupti excepturi blanditiis enim eveniet architecto
-                nisi
-                suscipit recusandae.
-            </p>
-
+            <% } %>
         </div>
+        <!-- <div class="modal-footer justify-content-center pb-0">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <% for(i=1;i<=book.chapter.length;i++){ %>
+                    <li class="page-item"><a class="page-link" href="#"><%= i %></a></li>
+                    <% } %>
+                </ul>
+            </nav>
+        </div> -->
     </div>
 </body>
-
-<script>
-    function openModal() {
-        document.getElementById("bookModalParent").style.display = "block";
-    }
-
-    function closeModal() {
-        document.getElementById("bookModalParent").style.display = "none";
-    }
-</script>
+<!-- <script src="/readBook.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>

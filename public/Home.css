@@ -81,39 +81,39 @@ body{
     color: red;
 }
 .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+ .image:hover {
+  opacity: 0.3;
+}
+
+ .middle:hover {
+  opacity: 1;
+}
+button{
+    background-color: dodgerblue;
+    color: floralwhite;
+}
+.text {
   
-   .image:hover {
-    opacity: 0.3;
-  }
+  color: white;
+ 
   
-   .middle:hover {
-    opacity: 1;
-  }
-  button{
-      background-color: dodgerblue;
-      color: floralwhite;
-  }
-  .text {
-    
-    color: white;
-   
-    
-  }
-  .jumbotron{
-      width: 100%;
-  }
-  .title{
-    font-family: 'Dancing Script', cursive;
-  }
+}
+.jumbotron{
+    width: 100%;
+}
+.title{
+  font-family: 'Dancing Script', cursive;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     

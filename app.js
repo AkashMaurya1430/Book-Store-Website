@@ -4,9 +4,10 @@ var path = require("path");
 // var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var Book = require('./modal/book');
-const user = require("./routes/user");
+// const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
 const User = require('./modal/User');
+const { realpath } = require('fs');
 var userData = {};
 
 
@@ -31,9 +32,9 @@ app.get("/addbook", function (req, res) {
 })
 
 
-app.get('/readbook', (req, res) => {
-    res.render('book');
-})
+// app.get('/readbook', (req, res) => {
+//     res.render('book');
+// })
 
 app.get('/login', (req, res) => {
     res.render('login')
@@ -244,13 +245,19 @@ app.listen(port, process.env.IP, function () {
 app.post('/uploadbook', function (req, res) {
     let bookInfo = req.body;
     let chapterNames = req.body.chapterName;
+    console.log(chapterNames.length);
     let storys = req.body.story;
     let chapters = [];
+    let author = userData.name;
     let i = 0;
-    req.body.chapterName.forEach(element => {
-        chapters.push({ chapterName: chapterNames[i], story: storys[i] })
-        i++;
-    });
+    if (chapterNames.length === 1) {
+        chapters.push({ chapterName: chapterNames[i], story: storys[i] });
+    } else {
+        req.body.chapterName.forEach(element => {
+            chapters.push({ chapterName: chapterNames[i], story: storys[i] });
+            i++;
+        });
+    }
     console.log("Book Data", req.body);
     const book = new Book({
         name: req.body.name,
@@ -258,7 +265,7 @@ app.post('/uploadbook', function (req, res) {
         description: req.body.description,
         Price: req.body.Price,
         imageUrl: req.body.imageUrl,
-        author: userData._id,
+        author: author,
         chapter: chapters
     });
     book.save(function (err) {
@@ -272,25 +279,13 @@ app.post('/uploadbook', function (req, res) {
 });
 
 
-// const book = new Book({
+app.get('/readbook', function (req, res) {
+    var id = req.query.id;
+    Book.findOne({ _id: id }).then((book, err) => {
+        // console.log(book);
+        res.render("book", {
+            book: book
+        })
+    })
+});
 
-//     name: "Akash",
-//     category: "Fictional",
-//     // author: "akash",
-//     description: "kuch nahi",
-//     review: "mast hai",
-//     imageUrl: "abhi nahi hai",
-//     cost: "Free",
-//     chapter: [
-//         {
-//             name: "chap 1",
-//             story: " 11111111"
-//         },
-//         {
-//             name: "chap 2",
-//             story: " 222"
-//         }
-//     ]
-
-// });
-// book.save();

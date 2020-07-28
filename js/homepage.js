@@ -1,13 +1,10 @@
-// let appJs = require("./app")
+// function openModal() {
+//   document.getElementById("bookModalParent").style.display = "block";
+// }
 
-// console.log(appJs.userData);
-function openModal() {
-  document.getElementById("bookModalParent").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("bookModalParent").style.display = "none";
-}
+// function closeModal() {
+//   document.getElementById("bookModalParent").style.display = "none";
+// }
 
 function addChapter() {
   var col6 = document.createElement("div");
