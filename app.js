@@ -7,7 +7,6 @@ var Book = require('./modal/book');
 const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
 const User = require('./modal/User');
-const { use } = require('./routes/user');
 var userData = {};
 
 
@@ -83,56 +82,86 @@ app.get("/Home", function (req, res) {
 
 
 app.get("/Adventure", function (req, res) {
-    Book.find({ category: "Adventure" }).then((book, err) => {
-        // console.log(book);
-        res.render("Adventure", {
-            booker: book
+    User.findOne({
+        email: userData.email
+    }).then((user, err) => {
+        Book.find({ category: "Adventure" }).then((book, err) => {
+            // console.log(book);
+            res.render("Adventure", {
+                booker: book,
+                userData: user
+            })
         })
     })
 })
 
 app.get("/Horror", function (req, res) {
-    Book.find({ category: "Horror" }).then((book, err) => {
-        // console.log(book);
-        res.render("Horror", {
-            booker: book
+    User.findOne({
+        email: userData.email
+    }).then((user, err) => {
+        Book.find({ category: "Horror" }).then((book, err) => {
+            // console.log(book);
+            res.render("Horror", {
+                booker: book,
+                userData: user
+            })
         })
     })
 })
 
 app.get("/Fantasy", function (req, res) {
-    Book.find({ category: "Fantasy" }).then((book, err) => {
-        // console.log(book);
-        res.render("Fantasy", {
-            booker: book
+    User.findOne({
+        email: userData.email
+    }).then((user, err) => {
+        Book.find({ category: "Fantasy" }).then((book, err) => {
+            // console.log(book);
+            res.render("Fantasy", {
+                booker: book,
+                userData: user
+            })
         })
     })
 })
 
 app.get("/Mystery", function (req, res) {
-    Book.find({ category: "Mystery" }).then((book, err) => {
-        // console.log(book);
-        res.render("Mystery", {
-            booker: book
+    User.findOne({
+        email: userData.email
+    }).then((user, err) => {
+        Book.find({ category: "Mystery" }).then((book, err) => {
+            // console.log(book);
+            res.render("Mystery", {
+                booker: book,
+                userData: user
+            })
         })
     })
 })
 
 app.get("/Romance", function (req, res) {
-    Book.find({ category: "Romance" }).then((book, err) => {
-        // console.log(book);
-        res.render("Romance", {
-            booker: book
+    User.findOne({
+        email: userData.email
+    }).then((user, err) => {
+        Book.find({ category: "Romance" }).then((book, err) => {
+            // console.log(book);
+            res.render("Romance", {
+                booker: book,
+                userData: user
+            })
         })
     })
 })
 
 
 app.get("/ScienceFiction", function (req, res) {
-    Book.find({ category: "ScienceFiction" }).then((book, err) => {
-        // console.log(book);
-        res.render("ScienceFiction", {
-            booker: book
+    User.findOne({
+        email: userData.email
+    }).then((user, err) => {
+        Book.find({ category: "ScienceFiction" }).then((book, err) => {
+            // console.log(book);
+            res.render("ScienceFiction", {
+                booker: book,
+                userData: user
+            })
         })
     })
 })
@@ -171,17 +200,17 @@ app.post("/signup", function (req, res) {
         password: req.body.password,
         name: req.body.name
     });
-    olduser = User.findOne({ email: req.body.email })
-    if (olduser) {
+    User.findOne({ email: req.body.email }).then((req, res) => {
         res.redirect("login")
         return (console.log("User already Exist"))
-    }
+    });
     newUser.save(function (err) {
         if (err) {
             console.log(err);
 
         } else {
             res.redirect("Home")
+            userData = newUser;
         }
     });
 })
@@ -205,15 +234,42 @@ app.post("/login", function (req, res) {
     })
 })
 
-
-module.exports = { userData: "userData" };
-
 let port = (process.env.PORT || '3000')
 
 app.listen(port, process.env.IP, function () {
     console.log("server is running");
 });
 
+
+app.post('/uploadbook', function (req, res) {
+    let bookInfo = req.body;
+    let chapterNames = req.body.chapterName;
+    let storys = req.body.story;
+    let chapters = [];
+    let i = 0;
+    req.body.chapterName.forEach(element => {
+        chapters.push({ chapterName: chapterNames[i], story: storys[i] })
+        i++;
+    });
+    console.log("Book Data", req.body);
+    const book = new Book({
+        name: req.body.name,
+        category: req.body.category,
+        description: req.body.description,
+        Price: req.body.Price,
+        imageUrl: req.body.imageUrl,
+        author: userData._id,
+        chapter: chapters
+    });
+    book.save(function (err) {
+        if (!err) {
+            res.redirect('Home');
+            console.log("Book Added ");
+        } else {
+            console.log(err);
+        }
+    })
+});
 
 
 // const book = new Book({

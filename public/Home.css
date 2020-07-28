@@ -31,25 +31,29 @@ body{
     font-weight: bold;
     color: black;
     font-size: 2rem;
+    transition: 0.4s;
     
 }
 .adh3:hover{
-    text-decoration:none ;
-    color: black;
+    color: blue;
+    text-decoration: none;
 }
-.wide{
+/* .wide{
     margin-top: 2rem;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     transition: .5s ease;
   backface-visibility: hidden;
-}
+} */
 .carousel{
     margin-top:20px ;
+    
 }
-
+.welcome h1{
+    font-size: 2rem;
+}
 
 
 .footer{
@@ -79,7 +83,29 @@ body{
 .y:hover{
     color: red;
 }
-.middle {
+.cont {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image {
+    opacity: 1;
+    margin-top: 2rem;
+    width: 154%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: .5s ease;
+  backface-visibility: hidden;
+   
+    
+  }
+  .read{
+      margin-left: 45px;
+      border-radius: 20px;
+      width: 100%;
+  }
+  .middle {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -90,23 +116,29 @@ body{
     text-align: center;
   }
   
-   .image:hover {
+  .cont:hover .image {
     opacity: 0.3;
   }
   
-   .middle:hover {
+  .cont:hover .middle {
     opacity: 1;
   }
+  
+  .text {
+   
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+  
+   /* .middle:hover {
+    opacity: 1;
+  } */
   button{
       background-color: dodgerblue;
       color: floralwhite;
   }
-  .text {
-    
-    color: white;
-   
-    
-  }
+  
   .jumbotron{
       width: 100%;
   }
@@ -117,9 +149,14 @@ body{
       margin: auto;
       float: right;
   }
+  .carousel-item img{
+      height: 500px;
+  }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    
+    .carousel-item img{
+        height: auto;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
