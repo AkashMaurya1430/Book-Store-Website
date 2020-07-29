@@ -50,13 +50,19 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          <a class="nav-link btn dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-search" aria-hidden="true"></i> Browse
-          </a>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            Genre </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- <a href="/Adventure" class=" nav-link btn btn-link">Adventure</a>
+            <a href="/ScienceFiction" class=" nav-link btn btn-link">Adventure</a>
+            <a href="/Adventure" class=" nav-link btn btn-link">Adventure</a>
+            <a href="/Adventure" class=" nav-link btn btn-link">Adventure</a>
+            <a href="/Adventure" class=" nav-link btn btn-link">Adventure</a>
+            <a href="/Adventure" class=" nav-link btn btn-link">Adventure</a> -->
             <form action="/Adventure" method="get">
-              <button type="submit" class=" nav-link btn btn-link">Adventure</button>
+              <button type="submit" class="nav-link btn btn-link">Adventure</button>
             </form>
             <form action="/ScienceFiction" method="get">
               <button type="submit" class="nav-link btn btn-link">Science Fiction</button>
@@ -73,16 +79,17 @@
             <form action="/Mystery" method="get">
               <button type="submit" class="nav-link btn btn-link">Mystery</button>
             </form>
-             
+             </div>
               
           </li>
-          <li class="nav-item">
-            <a href="#" style="color: #3e585e; text-decoration: none; font-weight: 600;float: left;" class="nav-link btn btn-warning btn-link" data-toggle="modal"
-            data-target="#addBookModal"><i class="fa fa-pencil" aria-hidden="true"></i>
-            Create Your Own Book </a>
-          </li>
+          
       </ul>
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" style="color: #3e585e; text-decoration: none; font-weight: 600;float: left;" class="nav-link btn btn-warning btn-link" data-toggle="modal"
+          data-target="#addBookModal"><i class="fas fa-plus" aria-hidden="true"></i>
+          Create Your Own Book </a>
+      </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -90,12 +97,8 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/Home">My Account</a>
-            <a class="dropdown-item" href="/Adventure">Adventure</a>
-            <a class="dropdown-item" href="/ScienceFiction">Science Fiction</a>
-            <a class="dropdown-item" href="/Fantasy">Fantasy</a>
-            <a class="dropdown-item" href="/Romance">Romance</a>
-            <a class="dropdown-item" href="/Mystery">Mystery</a>
-            <a class="dropdown-item" href="/Horror">Horror</a>
+            <a class="dropdown-item" href="#">LogOut</a>
+            
           </div>
         </li>
       </ul>

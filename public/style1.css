@@ -5,6 +5,13 @@ body{
     font-family: 'Roboto', sans-serif;
     
 }
+.dropdown{
+    float: right;
+    margin-right: 20px;
+}
+#navbarDropdown{
+    float: left;
+}
 nav{
     padding: 2px; background-color: #7db0bd;font-size: large;
 }
