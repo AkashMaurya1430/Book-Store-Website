@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require("path");
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var Book = require('./modal/book');
 // const user = require("./routes/user");
@@ -57,12 +57,6 @@ app.get("/Home", function (req, res) {
                             Book.find({ category: "Mystery" }).then((Mysterybooks, err) => {
                                 // console.log(Mysterybooks);
                                 res.render("Home", {
-                                    // name : book.name,
-                                    // author : book.author,
-                                    // category : book.category,
-                                    // description : book.description,
-                                    // pages : book.pages,
-                                    // imageUrl : book.imageUrl 
                                     userData: user,
                                     booker: book,
                                     Fantasybooks,
@@ -289,3 +283,13 @@ app.get('/readbook', function (req, res) {
     })
 });
 
+app.post('/buy', function (req, res) {
+    var id = req.query.id;
+    console.log(id);
+    Book.findByIdAndUpdate({ _id: id }, { $push: { ownedBy: [userData._id] } }).then((book, err) => {
+        res.redirect("Home");
+        console.log("Bought");
+    })
+});
+
+// Book.findByAndUpdate({ Price: { $gt: 0 } }, { $addFields: { ownedBy: mongoose.Schema.ObjectId } });

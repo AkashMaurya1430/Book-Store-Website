@@ -51,7 +51,11 @@ const bookSchema = new mongoose.Schema({
     },
     author: {
         type: String,
-    }
+    },
+    ownedBy: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+    }]
 });
 
 

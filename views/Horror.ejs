@@ -137,7 +137,12 @@
         <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
           <i class="fa fa-book" aria-hidden="true"></i> Read
           <%}else{%>
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
+          <form action="/buy?id=<%=book._id%>" method="POST">
+            <button class="btn btn-primary Read" type="submit">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy
+            </button>
+          </form>
+          <%}%>
         </a>
       </div>
     </div>
@@ -147,27 +152,27 @@
 
 
 
-  <footer class="footer">
-    <div class="footer-contain">
-      <a class="f" href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
-      <a class="t" href="https://www.twitter.com/"><i class="social-icon fab fa-twitter fa-1x"></i></a>
-      <a class="i" href="https://www.instagram.com/"><i class="social-icon fab fa-instagram fa-1x"></i></a>
-      <a class="y" href="https://www.youtube.com/"><i class="social-icon fab fa-youtube fa-1x"></i></a>
-      <p class="headercp mb-0">© Copyright 2020 Book Rack</p>
-    </div>
-  </footer>
+          <footer class="footer">
+            <div class="footer-contain">
+              <a class="f" href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
+              <a class="t" href="https://www.twitter.com/"><i class="social-icon fab fa-twitter fa-1x"></i></a>
+              <a class="i" href="https://www.instagram.com/"><i class="social-icon fab fa-instagram fa-1x"></i></a>
+              <a class="y" href="https://www.youtube.com/"><i class="social-icon fab fa-youtube fa-1x"></i></a>
+              <p class="headercp mb-0">© Copyright 2020 Book Rack</p>
+            </div>
+          </footer>
 
 
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="jquery.min.js"></script>
-  <script src="numscroller-1.0.js"></script>
-  <script>
-    AOS.init({
-      duration: 2000,
-      once: true,
-    });
-  </script>
+          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <script src="jquery.min.js"></script>
+          <script src="numscroller-1.0.js"></script>
+          <script>
+            AOS.init({
+              duration: 2000,
+              once: true,
+            });
+          </script>
 </body>
 
 </html>
