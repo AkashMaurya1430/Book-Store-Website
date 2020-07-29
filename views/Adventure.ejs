@@ -36,23 +36,26 @@
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 2px;">
     <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <form action="/Home" method="get">
-            <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
+            <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i>
+              Home</button>
           </form>
         </li>
-        
+
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-search" aria-hidden="true"></i> Browse
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <form action="/Adventure" method="get">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-search" aria-hidden="true"></i> Browse
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <form action="/Adventure" method="get">
               <button type="submit" class=" nav-link btn btn-link">Adventure</button>
             </form>
             <form action="/ScienceFiction" method="get">
@@ -70,34 +73,34 @@
             <form action="/Mystery" method="get">
               <button type="submit" class="nav-link btn btn-link">Mystery</button>
             </form>
-             
-              
-          </li>
-          <li class="nav-item">
-            <form action="/writer" method="get">
-              <button style="color: #3e585e;" type="submit" class="btn btn-link">Create Your Own Book</button>
-            </form>
-          </li>
+
+
+        </li>
+        <li class="nav-item">
+          <form action="/writer" method="get">
+            <button style="color: #3e585e;" type="submit" class="btn btn-link">Create Your Own Book</button>
+          </form>
+        </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-user" aria-hidden="true"></i> <%= userData.name %>
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/Home">My Account</a>
-        <a class="dropdown-item" href="/Adventure">Adventure</a>
-        <a class="dropdown-item" href="/ScienceFiction">Science Fiction</a>
-        <a class="dropdown-item" href="/Fantasy">Fantasy</a>
-        <a class="dropdown-item" href="/Romance">Romance</a>
-        <a class="dropdown-item" href="/Mystery">Mystery</a>
-        <a class="dropdown-item" href="/Horror">Horror</a>
-      </div>
-    </li>
-  </ul>
-</div>
-</nav>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user" aria-hidden="true"></i> <%= userData.name %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/Home">My Account</a>
+            <a class="dropdown-item" href="/Adventure">Adventure</a>
+            <a class="dropdown-item" href="/ScienceFiction">Science Fiction</a>
+            <a class="dropdown-item" href="/Fantasy">Fantasy</a>
+            <a class="dropdown-item" href="/Romance">Romance</a>
+            <a class="dropdown-item" href="/Mystery">Mystery</a>
+            <a class="dropdown-item" href="/Horror">Horror</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
 
@@ -126,16 +129,22 @@
             </button><br><br>
           </form>
         </div>
-        <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+        <%if(book.Price==0){ %>
+        <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read">
           <i class="fa fa-book" aria-hidden="true"></i> Read
-          <%}else{%>
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
         </a>
+        <%}else{%>
+        <form action="/buy?id=<%=book._id%>" method="POST">
+          <button class="btn btn-primary Read" type="submit">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy
+          </button>
+        </form>
+        <%}%>
         <!-- <%if (book.price === "paid"){%>
-          
-          <%} else { %>
-            <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a>
-          <% } %> -->
+
+        <%} else { %>
+        <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a>
+        <% } %> -->
         <!-- <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a> -->
         <!-- <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i>
           Read</a> -->
