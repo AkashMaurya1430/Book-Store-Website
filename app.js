@@ -108,6 +108,10 @@ app.get("/Horror", function (req, res) {
     })
 })
 
+app.get('/', function (req, res) {
+    res.redirect('login')
+})
+
 app.get("/Fantasy", function (req, res) {
     User.findOne({
         email: userData.email
