@@ -44,6 +44,7 @@ app.get("/Home", function (req, res) {
     User.findOne({
         email: userData.email
     }).then((user, err) => {
+        // console.log(user);
         Book.find({ category: "Adventure" }).then((book, err) => {
             // console.log(book);
             Book.find({ category: "Fantasy" }).then((Fantasybooks, err) => {
@@ -56,14 +57,18 @@ app.get("/Home", function (req, res) {
                             // console.log(ScienceFictionbooks);
                             Book.find({ category: "Mystery" }).then((Mysterybooks, err) => {
                                 // console.log(Mysterybooks);
-                                res.render("Home", {
-                                    userData: user,
-                                    booker: book,
-                                    Fantasybooks,
-                                    Horrorbooks,
-                                    Romancebooks,
-                                    ScienceFictionbooks,
-                                    Mysterybooks
+                                Book.find({}).then((allbooks, err) => {
+                                    // console.log(allbooks);
+                                    res.render("Home", {
+                                        userData: user,
+                                        booker: book,
+                                        Fantasybooks,
+                                        Horrorbooks,
+                                        Romancebooks,
+                                        ScienceFictionbooks,
+                                        Mysterybooks,
+                                        allbooks
+                                    });
                                 });
                             });
                         });
