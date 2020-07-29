@@ -34,7 +34,8 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 2px;">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+    style=" padding: 2px; background-color: #7db0bd;font-size: large;">
     <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,9 +59,8 @@
             <i class="fa fa-search" aria-hidden="true"></i>
             Genre </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
             <form action="/Adventure" method="get">
-              <button type="submit" class="nav-link btn btn-link">Adventure</button>
+              <button type="submit" class=" nav-link btn btn-link">Adventure</button>
             </form>
             <form action="/ScienceFiction" method="get">
               <button type="submit" class="nav-link btn btn-link">Science Fiction</button>
@@ -77,26 +77,28 @@
             <form action="/Mystery" method="get">
               <button type="submit" class="nav-link btn btn-link">Mystery</button>
             </form>
-          </div>
+
 
         </li>
+        <!-- <button style="color: #3e585e;" type="submit" class="btn btn-link" data-toggle="modal"
+          data-target="#addBookModal">Create Your Own Book</button> -->
 
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item mr-3">
           <a href="#" style="color: #3e585e; text-decoration: none; font-weight: 600;float: left;"
             class="nav-link btn btn-warning btn-link" data-toggle="modal" data-target="#addBookModal"><i
               class="fas fa-plus" aria-hidden="true"></i>
             Create Your Own Book </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown mr-5">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-user" aria-hidden="true"></i> <%= userData.name %>
+            aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <%= userData.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/Home">My Account</a>
-            <a class="dropdown-item" href="#">LogOut</a>
+            <a class="dropdown-item" href="/login"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
 
           </div>
         </li>
