@@ -36,7 +36,8 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown active">
           <form action="/Home" method="get">
-            <button type="submit" class="nav-link btn btn-link" style="font-size: 18px;"><i class="fa fa-home" aria-hidden="true"></i>
+            <button type="submit" class="nav-link btn btn-link" style="font-size: 18px;"><i class="fa fa-home"
+                aria-hidden="true"></i>
               Home</button>
           </form>
           <!-- <a href="/Home" class="nav-link btn btn-link" style="float: left;"><i class="fa fa-home"
@@ -44,8 +45,8 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link btn dropdown-toggle" style="float: left;font-size: 18px;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link btn dropdown-toggle" style="float: left;font-size: 18px;" href="#" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-search" aria-hidden="true"></i>
             Genre </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -72,23 +73,24 @@
         </li>
         <!-- <button style="color: #3e585e;" type="submit" class="btn btn-link" data-toggle="modal"
           data-target="#addBookModal">Create Your Own Book</button> -->
-        
+
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="#" style="color: #3e585e; text-decoration: none; font-weight: 600;float: left;" class="nav-link btn btn-warning btn-link" data-toggle="modal"
-          data-target="#addBookModal"><i class="fas fa-plus" aria-hidden="true"></i>
-          Create Your Own Book </a>
-      </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item mr-3">
+          <a href="#" style="color: #3e585e; text-decoration: none; font-weight: 600;float: left;"
+            class="nav-link btn btn-warning btn-link" data-toggle="modal" data-target="#addBookModal"><i
+              class="fas fa-plus" aria-hidden="true"></i>
+            Create Your Own Book </a>
+        </li>
+        <li class="nav-item dropdown mr-5">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">
             <i class="fa fa-user" aria-hidden="true"></i>
             <%= userData.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">LogOut</a>
-            
+            <a class="dropdown-item" href="/login"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+
           </div>
         </li>
       </ul>
@@ -146,10 +148,10 @@
             <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
             <div class="middle">
               <div class="text">
-                <a href="/readbook?id=<%=book._id%>"
-                  class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a>
-                </div>
-                  
+                <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><i class="fa fa-book"
+                    aria-hidden="true"></i> Read</a>
+              </div>
+
             </div>
           </div>
         </div>
@@ -191,8 +193,6 @@
               </a></div>
             </div>
           </div>
-
-
           <form action="/<%= book.Price %>" method="get">
                   <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
                     <%if(book.Price==0){ %>
@@ -428,209 +428,167 @@
                                                       </div>
                                                     </div>
                                                   </div>
-                                                  <!-- <button type="submit" class="btn btn-primary">
-            Launch demo modal
-          </button> -->
-                                                  
-                                                  
-                                                              
-                                                              <!-- <button type="submit" class="btn btn-primary">
-            Launch demo modal
-          </button> -->
-                                                              <footer class="footer">
-                                                                <div class="footer-contain text-center">
-                                                                  <a class="f" href="https://www.facebook.com/"><i
-                                                                      class="social-icon fab fa-facebook-f fa-1x"></i></a>
-                                                                  <a class="t" href="https://www.twitter.com/"><i
-                                                                      class="social-icon fab fa-twitter fa-1x"></i></a>
-                                                                  <a class="i" href="https://www.instagram.com/"><i
-                                                                      class="social-icon fab fa-instagram fa-1x"></i></a>
-                                                                  <a class="y" href="https://www.youtube.com/"><i
-                                                                      class="social-icon fab fa-youtube fa-1x"></i></a>
-                                                                  <p class="headercp mb-0">© Copyright 2020 Book Rack
-                                                                  </p>
+                                                  <footer class="footer mt-5">
+                                                    <div class="footer-contain text-center">
+                                                      <a class="f" href="https://www.facebook.com/"><i
+                                                          class="social-icon fab fa-facebook-f fa-1x"></i></a>
+                                                      <a class="t" href="https://www.twitter.com/"><i
+                                                          class="social-icon fab fa-twitter fa-1x"></i></a>
+                                                      <a class="i" href="https://www.instagram.com/"><i
+                                                          class="social-icon fab fa-instagram fa-1x"></i></a>
+                                                      <a class="y" href="https://www.youtube.com/"><i
+                                                          class="social-icon fab fa-youtube fa-1x"></i></a>
+                                                      <p class="headercp mb-0">© Copyright 2020 Book Rack
+                                                      </p>
+                                                    </div>
+                                                  </footer>
+
+                                                  <!-- Add Book Details modal -->
+                                                  <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document"
+                                                      style="max-width: 60%;">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header pb-0">
+                                                          <h4 class="modal-title"> Add New Book</h4>
+                                                          <button type="button" style="outline: none;" class="close"
+                                                            data-dismiss="modal">
+                                                            &times;
+                                                          </button>
+
+                                                        </div>
+                                                        <div class="modal-body">
+                                                          <div class="row no-gutters">
+                                                            <form class="needs-validation w-100" id="addBookForm"
+                                                              action="/uploadbook" method="POST" novalidate>
+                                                              <div class="form-row">
+                                                                <!-- Book Name -->
+                                                                <div class="col-6">
+                                                                  <label for="bookName">Book name</label>
+                                                                  <input type="text" class="form-control" id="bookName"
+                                                                    placeholder="Book name" name="name" required>
+                                                                  <div class="invalid-feedback">
+                                                                    Enter Name of Your Book.
+                                                                  </div>
                                                                 </div>
-                                                              </footer>
-
-                                                              <!-- Add Book Details modal -->
-                                                              <div class="modal fade" id="addBookModal" tabindex="-1"
-                                                                role="dialog" aria-labelledby="exampleModalCenterTitle"
-                                                                aria-hidden="true">
-                                                                <div class="modal-dialog modal-dialog-centered"
-                                                                  role="document" style="max-width: 60%;">
-                                                                  <div class="modal-content">
-                                                                    <div class="modal-header pb-0">
-                                                                        <h4 class="modal-title"> Add New Book</h4>
-                                                                        <button type="button" class="close" data-dismiss="modal">
-                                                                          &times;
-                                                                      </button>
-                                                                      
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                      <div class="row no-gutters">
-                                                                        <form class="needs-validation w-100"
-                                                                          id="addBookForm" action="/uploadbook"
-                                                                          method="POST" novalidate>
-                                                                          <div class="form-row">
-                                                                            <!-- Book Name -->
-                                                                            <div class="col-6">
-                                                                              <label for="bookName">Book name</label>
-                                                                              <input type="text" class="form-control"
-                                                                                id="bookName" placeholder="Book name"
-                                                                                name="name" required>
-                                                                              <div class="invalid-feedback">
-                                                                                Enter Name of Your Book.
-                                                                              </div>
-                                                                            </div>
-                                                                            <!-- Category -->
-                                                                            <div class="col-6">
-                                                                              <label for="category">Category</label>
-                                                                              <input type="text" class="form-control"
-                                                                                id="category" placeholder="Category"
-                                                                                name="category" list="genre" required>
-                                                                              <div class="invalid-feedback">
-                                                                                Select a Category
-                                                                              </div>
-                                                                              <datalist id="genre">
-                                                                                <option value="Science Fiction">
-                                                                                </option>
-                                                                                <option value="Fantasy"></option>
-                                                                                <option value="Adventure"></option>
-                                                                                <option value="Mystery"></option>
-                                                                                <option value="Romance"></option>
-                                                                                <option value="Horror"></option>
-                                                                              </datalist>
-                                                                            </div>
-                                                                          </div>
-                                                                          <div class="form-row mt-2">
-                                                                            <div class="col-12">
-                                                                              <label for="category">Description</label>
-                                                                              <textarea name="description" id=""
-                                                                                class="form-control col-12"
-                                                                                required></textarea>
-                                                                              <div class="invalid-feedback">
-                                                                                Enter Description
-                                                                              </div>
-                                                                            </div>
-                                                                          </div>
-                                                                          <div class="form-row mt-2">
-                                                                            <div class="col-6">
-                                                                              <label for="price">Price</label>
-                                                                              <input type="text" class="form-control"
-                                                                                id="price" placeholder="Enter cost"
-                                                                                name="Price" required>
-                                                                              <div class="invalid-feedback">
-                                                                                Enter Cost
-                                                                              </div>
-                                                                            </div>
-                                                                            <div class="col-6">
-                                                                              <label for="imageUrl">Upload Cover Image
-                                                                                Url</label>
-                                                                              <input type="text" class="form-control"
-                                                                                id="form-control" name="imageUrl"
-                                                                                required>
-                                                                              <div class="invalid-feedback">
-                                                                                Choose image
-                                                                              </div>
-                                                                            </div>
-                                                                          </div>
-
-                                                                          <!-- Story -->
-                                                                          <div class="form-row mt-2" id="addChapterDiv">
-                                                                            <div class="col-12">
-                                                                              <h5 style="float: left;">Add Chapters</h5>
-                                                                              <div class="btn btn-primary float-right"
-                                                                                onclick="addChapter()">
-                                                                                Add More
-                                                                                Chapter's
-                                                                              </div>
-                                                                            </div>
-                                                                            <div class="col-6">
-                                                                              <div class="row no-gutters">
-                                                                                <label for="chapterTitle">Chapter
-                                                                                  Title</label>
-                                                                                <input type="text" class="form-control"
-                                                                                  id="chapterTitle"
-                                                                                  placeholder="Enter cost"
-                                                                                  name="chapterName" required>
-                                                                                <div class="invalid-feedback">
-                                                                                  Give Chapter Title
-                                                                                </div>
-                                                                              </div>
-                                                                              <div class="row no-gutters mt-2">
-                                                                                <label for="story">Story</label>
-                                                                                <textarea name="story" id="story"
-                                                                                  class="form-control col-12"
-                                                                                  required></textarea>
-                                                                                <div class="invalid-feedback">
-                                                                                  Type your Story
-                                                                                </div>
-                                                                              </div>
-                                                                            </div>
-                                                                          </form>
-                                                                        </div>
-                                                                        </div>
-                                                                        </div>
-                                                                        </div>
-                                                                            <!-- <div class="col-6">
-                          <div class="row no-gutters">
-                            <label for="chapterTitle">Chapter Title</label>
-                            <input type="text" class="form-control" id="chapterTitle" placeholder="Title"
-                              name="chapterName">
-                            <div class="invalid-feedback">
-                              Give Chapter Title
-                            </div>
-                          </div>
-                          <div class="row no-gutters mt-2">
-                            <label for="story">Story</label>
-                            <textarea name="story" id="story" class="form-control col-12"></textarea>
-                            <div class="invalid-feedback">
-                              Type your Story
-                            </div>
-                          </div>
-                        </div> -->
-                                                                          </div>
-                                                                          <div class="modal-footer">
-                                                                            <button type="button"
-                                                                              class="btn btn-secondary"
-                                                                              data-dismiss="modal">Close</button>
-                                                                            <button type="submit"
-                                                                              class="btn btn-success">Publish
-                                                                              Book</button>
-                                                                          </div>
-                                                                        </form>
-                                                                      </div>
-                                                                    </div>
+                                                                <!-- Category -->
+                                                                <div class="col-6">
+                                                                  <label for="category">Category</label>
+                                                                  <input type="text" class="form-control" id="category"
+                                                                    placeholder="Category" name="category" list="genre"
+                                                                    required>
+                                                                  <div class="invalid-feedback">
+                                                                    Select a Category
+                                                                  </div>
+                                                                  <datalist id="genre">
+                                                                    <option value="Science Fiction">
+                                                                    </option>
+                                                                    <option value="Fantasy"></option>
+                                                                    <option value="Adventure"></option>
+                                                                    <option value="Mystery"></option>
+                                                                    <option value="Romance"></option>
+                                                                    <option value="Horror"></option>
+                                                                  </datalist>
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-row mt-2">
+                                                                <div class="col-12">
+                                                                  <label for="category">Description</label>
+                                                                  <textarea name="description" id=""
+                                                                    class="form-control col-12" required></textarea>
+                                                                  <div class="invalid-feedback">
+                                                                    Enter Description
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-row mt-2">
+                                                                <div class="col-6">
+                                                                  <label for="price">Price</label>
+                                                                  <input type="text" class="form-control" id="price"
+                                                                    placeholder="Enter cost" name="Price" required>
+                                                                  <div class="invalid-feedback">
+                                                                    Enter Cost
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                  <label for="imageUrl">Upload Cover Image
+                                                                    Url</label>
+                                                                  <input type="text" class="form-control"
+                                                                    id="form-control" name="imageUrl" required>
+                                                                  <div class="invalid-feedback">
+                                                                    Choose image
                                                                   </div>
                                                                 </div>
                                                               </div>
 
-                                                              <script src="/homepage.js"></script>
-                                                              <script src="../app.js"></script>
-                                                              <script
-                                                                src="https://unpkg.com/aos@next/dist/aos.js"></script>
-                                                              <script src="jquery.min.js"></script>
-                                                              <script src="numscroller-1.0.js"></script>
-                                                              <script>
-                                                                AOS.init({
-                                                                  duration: 2000,
-                                                                  once: true,
-                                                                });
-                                                              </script>
-                                                              <script
-                                                                src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-                                                                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-                                                                crossorigin="anonymous"></script>
-                                                              <script
-                                                                src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                                                                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                                                                crossorigin="anonymous"></script>
-                                                              <script
-                                                                src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-                                                                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-                                                                crossorigin="anonymous"></script>
-                                                              <script src="https://apps.elfsight.com/p/platform.js"
-                                                                defer></script>
+                                                              <!-- Story -->
+                                                              <div class="form-row mt-2" id="addChapterDiv">
+                                                                <div class="col-12">
+                                                                  <h5 style="float: left;">Add Chapters</h5>
+                                                                  <div class="btn btn-primary float-right"
+                                                                    onclick="addChapter()">
+                                                                    Add More
+                                                                    Chapter's
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                  <div class="row no-gutters">
+                                                                    <label for="chapterTitle">Chapter
+                                                                      Title</label>
+                                                                    <input type="text" class="form-control"
+                                                                      id="chapterTitle" placeholder="Enter cost"
+                                                                      name="chapterName" required>
+                                                                    <div class="invalid-feedback">
+                                                                      Give Chapter Title
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="row no-gutters mt-2">
+                                                                    <label for="story">Story</label>
+                                                                    <textarea name="story" id="story"
+                                                                      class="form-control col-12" required></textarea>
+                                                                    <div class="invalid-feedback">
+                                                                      Type your Story
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+
+                                                              </div>
+                                                              <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                  data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-success">Publish
+                                                                  Book</button>
+                                                              </div>
+                                                            </form>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+                                                  <script src="/homepage.js"></script>
+                                                  <script src="../app.js"></script>
+                                                  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                                                  <script src="jquery.min.js"></script>
+                                                  <script src="numscroller-1.0.js"></script>
+                                                  <script>
+                                                    AOS.init({
+                                                      duration: 2000,
+                                                      once: true,
+                                                    });
+                                                  </script>
+                                                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                                                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                                                    crossorigin="anonymous"></script>
+                                                  <script
+                                                    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                                                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                                                    crossorigin="anonymous"></script>
+                                                  <script
+                                                    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                                                    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                                                    crossorigin="anonymous"></script>
+                                                  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 </body>
 
 </html>
