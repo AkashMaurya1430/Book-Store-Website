@@ -148,7 +148,7 @@
           <div class="cont">
             <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
             <div class="middle">
-              <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+              <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read book</a></button></div>
             </div>
           </div>
 
@@ -161,11 +161,7 @@
               Paid<%}%>
             </button>
           </form>
-          <a href="/readbook?id=<%=book._id%>">
-              <div class="middle">
-                <div class="text"><button class="btn btn-primary ">Read More</button></div>
-              </div>
-              </a>
+         
         </div>
         <% }) %>
       </div>
@@ -186,15 +182,9 @@
             <div class="cont">
               <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
               <div class="middle">
-                <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read book</a></button></div>
               </div>
             </div>
-            <form action="/Fantasy" method="get" style="padding-bottom: 10px;">
-              <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-              </button>
-            </form>
-
-
             <form action="/<%= book.Price %>" method="get">
               <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
                 Free
@@ -202,11 +192,9 @@
                 Paid<%}%>
               </button>
             </form>
-            <a href="/readbook?id=<%=book._id%>">
-                <div class="middle">
-                  <div class="text"><button class="btn btn-primary ">Read More</button></div>
-                </div>
-                </a>
+            
+                
+                
           </div>
 
           <% }) %>
@@ -227,7 +215,7 @@
             <div class="cont">
               <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
               <div class="middle">
-                <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read book</a></button></div>
               </div>
             </div>
 
@@ -238,11 +226,7 @@
                 Paid<%}%>
               </button>
             </form>
-            <a href="/readbook?id=<%=book._id%>">
-                <div class="middle">
-                  <div class="text"><button class="btn btn-primary ">Read More</button></div>
-                </div>
-                </a>
+            
           </div>
 
           <% }) %>
@@ -265,7 +249,7 @@
               <div class="cont">
                 <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
                 <div class="middle">
-                  <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                  <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read book</a></button></div>
                 </div>
               </div>
 
@@ -276,11 +260,7 @@
                   Paid<%}%>
                 </button>
               </form>
-              <a href="/readbook?id=<%=book._id%>">
-                  <div class="middle">
-                    <div class="text"><button class="btn btn-primary ">Read More</button></div>
-                  </div>
-                  </a>
+             
             </div>
 
             <% }) %>
@@ -303,7 +283,7 @@
                 <div class="cont">
                   <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
                   <div class="middle">
-                    <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                    <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read book</a></button></div>
                   </div>
                 </div>
 
@@ -315,11 +295,7 @@
                     Paid<%}%>
                   </button>
                 </form>
-                <a href="/readbook?id=<%=book._id%>">
-                    <div class="middle">
-                      <div class="text"><button class="btn btn-primary ">Read More</button></div>
-                    </div>
-                    </a>
+                
               </div>
 
               <% }) %>
@@ -342,7 +318,7 @@
                   <div class="cont">
                     <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
                     <div class="middle">
-                      <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
+                      <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read book</a></button></div>
                     </div>
                   </div>
 
@@ -354,11 +330,7 @@
                       Paid<%}%>
                     </button>
                   </form>
-                  <a href="/readbook?id=<%=book._id%>">
-                      <div class="middle">
-                        <div class="text"><button class="btn btn-primary ">Read More</button></div>
-                      </div>
-                      </a>
+                  
                 </div>
 
                 <% }) %>

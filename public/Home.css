@@ -1,3 +1,7 @@
+.middle a{
+    text-decoration: none;
+    color: floralwhite;
+}
 body{
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
