@@ -4,9 +4,8 @@ var path = require("path");
 var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var Book = require('./modal/book');
-// const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
-const User = require('./modal/User');
+const User = require('./modal/user');
 const { realpath } = require('fs');
 var userData = {};
 
