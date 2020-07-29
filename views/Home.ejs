@@ -132,7 +132,7 @@
     <!-- Welcome -->
 
     <div class="welcome">
-      <h1 style="text-transform: capitalize;">Welcome home, <%= userData.name %></h1>
+      <h1 style="text-transform: capitalize;" style="padding-top: 20px;">Welcome home, <%= userData.name %></h1>
       <hr width="80%" style="margin-left: -1rem;">
     </div>
   </div>
@@ -179,9 +179,9 @@
             <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
             <div class="middle">
               <div class="text"><a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
-                <i class="fa fa-book" aria-hidden="true"></i> Read Book
+                <i class="fa fa-book" aria-hidden="true"></i> Read
                 <%}else{%>
-                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Book<%}%>
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
               </a></div>
             </div>
           </div>
@@ -202,192 +202,205 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="Adventure">
-        <div class="container">
-          <div class="container">
-            <form action="/Fantasy" method="get">
-              <button type="submit" class="btn adh3 btn-link title">Fantasy</button>
-            </form>
-          </div>
-          <div class="row">
-            <%  Fantasybooks.forEach(function(book){ %>
-            <div class="col-lg-2 col-sm-12">
-              <div class="cont">
-                <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
-                <div class="middle">
-                  <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read
-                        book</a></button></div>
-                </div>
-              </div>
-              <form action="/<%= book.Price %>" method="get">
-                <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
-                  Free
-                  <%}else{%>
-                  Paid<%}%>
-              </button>
-            </form>
-            
-                
-                
-          </div>
-
-          <% }) %>
-            </div>
-          </div>
-        </div>
-
         <div class="container">
           <div class="Adventure">
             <div class="container">
-              <form action="/Horror" method="get">
-                <button type="submit" class="btn adh3 btn-link title">Horror</button>
+              <form action="/Fantasy" method="get">
+                <button type="submit" class="btn adh3 btn-link title">Fantasy</button>
               </form>
             </div>
             <div class="row">
-              <%  Horrorbooks.forEach(function(book){ %>
+              <%  Fantasybooks.forEach(function(book){ %>
+      
               <div class="col-lg-2 col-sm-12">
                 <div class="cont">
                   <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
                   <div class="middle">
-                    <div class="text"><button href class="btn btn-primary read"><a
-                          href="/readbook?id=<%=book._id%>">Read book</a></button></div>
+                    <div class="text"><a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+                      <i class="fa fa-book" aria-hidden="true"></i> Read
+                      <%}else{%>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
+                    </a></div>
                   </div>
                 </div>
-
+      
+      
                 <form action="/<%= book.Price %>" method="get">
-                  <button type="button" class="btn btn-light btn-sm"
-                    style="border-radius: 100px;"><%if(book.Price==0){ %>
+                  <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
+                    <%if(book.Price==0){ %>
                     Free
                     <%}else{%>
                     Paid<%}%>
-              </button>
-            </form>
-            
-          </div>
-
-          <% }) %>
+                  </button>
+                </form>
+               
+              </div>
+              <% }) %>
               </div>
             </div>
           </div>
-
-
+        
           <div class="container">
             <div class="Adventure">
               <div class="container">
-                <div class="container">
-                  <form action="/Romance" method="get">
-                    <button type="submit" class="btn adh3 btn-link title">Romance</button>
-                  </form>
-                </div>
-                <div class="row">
-                  <%  Romancebooks.forEach(function(book){ %>
-                  <div class="col-lg-2 col-sm-12">
-                    <div class="cont">
-                      <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
-                      <div class="middle">
-                        <div class="text"><button href class="btn btn-primary read"><a
-                              href="/readbook?id=<%=book._id%>">Read book</a></button></div>
-                      </div>
-                    </div>
-
-                    <form action="/<%= book.Price %>" method="get">
-                      <button type="submit" class="btn btn-light btn-sm"
-                        style="border-radius: 100px;"><%if(book.Price==0){ %>
-                        Free
+                <form action="/Horror" method="get">
+                  <button type="submit" class="btn adh3 btn-link title">Horror</button>
+                </form>
+              </div>
+              <div class="row">
+                <%  Horrorbooks.forEach(function(book){ %>
+        
+                <div class="col-lg-2 col-sm-12">
+                  <div class="cont">
+                    <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+                    <div class="middle">
+                      <div class="text"><a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+                        <i class="fa fa-book" aria-hidden="true"></i> Read
                         <%}else{%>
-                        Paid<%}%>
-                </button>
-              </form>
-             
-            </div>
-
-            <% }) %>
+                          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
+                      </a></div>
+                    </div>
                   </div>
+        
+        
+                  <form action="/<%= book.Price %>" method="get">
+                    <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
+                      <%if(book.Price==0){ %>
+                      Free
+                      <%}else{%>
+                      Paid<%}%>
+                    </button>
+                  </form>
+                 
+                </div>
+                <% }) %>
                 </div>
               </div>
-
-
+            </div>
+          
               <div class="container">
                 <div class="Adventure">
                   <div class="container">
-                    <div class="container">
-                      <form action="/ScienceFiction" method="get">
-                        <button type="submit" class="btn adh3 btn-link title">Science Fiction</button>
-                      </form>
-                    </div>
-                    <div class="row">
-                      <%  ScienceFictionbooks.forEach(function(book){ %>
-                      <div class="col-lg-2 col-sm-12">
-                        <div class="cont">
-                          <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
-                          <div class="middle">
-                            <div class="text"><button href class="btn btn-primary read"><a
-                                  href="/readbook?id=<%=book._id%>">Read book</a></button></div>
-                          </div>
-                        </div>
-
-                        <form action="/<%= book.Price %>" method="get">
-                          <button type="submit" class="btn btn-light btn-sm"
-                            style="border-radius: 100px;"><%if(book.Price==0){ %>
-                            Free
+                    <form action="/Romance" method="get">
+                      <button type="submit" class="btn adh3 btn-link title">Romance</button>
+                    </form>
+                  </div>
+                  <div class="row">
+                    <%  Romancebooks.forEach(function(book){ %>
+            
+                    <div class="col-lg-2 col-sm-12">
+                      <div class="cont">
+                        <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+                        <div class="middle">
+                          <div class="text"><a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+                            <i class="fa fa-book" aria-hidden="true"></i> Read
                             <%}else{%>
-                            Paid<%}%>
-                  </button>
-                </form>
-                
-              </div>
-
-              <% }) %>
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
+                          </a></div>
+                        </div>
                       </div>
+            
+            
+                      <form action="/<%= book.Price %>" method="get">
+                        <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
+                          <%if(book.Price==0){ %>
+                          Free
+                          <%}else{%>
+                          Paid<%}%>
+                        </button>
+                      </form>
+                     
+                    </div>
+                    <% }) %>
                     </div>
                   </div>
-
+                </div>
 
                   <div class="container">
                     <div class="Adventure">
                       <div class="container">
-                        <div class="container">
-                          <form action="/Mystery" method="get">
-                            <button type="submit" class="btn adh3 btn-link title">Mystery</button>
-                          </form>
-                        </div>
-                        <div class="row">
-                          <%  Mysterybooks.forEach(function(book){ %>
-                          <div class="col-lg-2 col-sm-12">
-                            <div class="cont">
-                              <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
-                              <div class="middle">
-                                <div class="text"><button href class="btn btn-primary read"><a
-                                      href="/readbook?id=<%=book._id%>">Read book</a></button></div>
-                              </div>
-                            </div>
-
-                            <form action="/<%= book.Price %>" method="get">
-                              <button type="submit" class="btn btn-light btn-sm"
-                                style="border-radius: 100px;"><%if(book.Price==0){ %>
-                                Free
+                        <form action="/ScienceFiction" method="get">
+                          <button type="submit" class="btn adh3 btn-link title">Science Fiction</button>
+                        </form>
+                      </div>
+                      <div class="row">
+                        <%  ScienceFictionbooks.forEach(function(book){ %>
+                
+                        <div class="col-lg-2 col-sm-12">
+                          <div class="cont">
+                            <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+                            <div class="middle">
+                              <div class="text"><a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+                                <i class="fa fa-book" aria-hidden="true"></i> Read
                                 <%}else{%>
-                                Paid<%}%>
+                                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
+                              </a></div>
+                            </div>
+                          </div>
+                
+                
+                          <form action="/<%= book.Price %>" method="get">
+                            <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
+                              <%if(book.Price==0){ %>
+                              Free
+                              <%}else{%>
+                              Paid<%}%>
+                            </button>
+                          </form>
+                         
+                        </div>
+                        <% }) %>
+                        </div>
+                      </div>
+                    </div>
+
+          <div class="container">
+            <div class="Adventure">
+              <div class="container">
+                <form action="/Mystery" method="get">
+                  <button type="submit" class="btn adh3 btn-link title">Mystery</button>
+                </form>
+              </div>
+              <div class="row">
+                <%  Mysterybooks.forEach(function(book){ %>
+        
+                <div class="col-lg-2 col-sm-12">
+                  <div class="cont">
+                    <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
+                    <div class="middle">
+                      <div class="text"><a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+                        <i class="fa fa-book" aria-hidden="true"></i> Read
+                        <%}else{%>
+                          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy<%}%>
+                      </a></div>
+                    </div>
+                  </div>
+        
+        
+                  <form action="/<%= book.Price %>" method="get">
+                    <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
+                      <%if(book.Price==0){ %>
+                      Free
+                      <%}else{%>
+                      Paid<%}%>
                     </button>
                   </form>
-                  
+                 
                 </div>
-
                 <% }) %>
+                </div>
               </div>
             </div>
-          </div>
           <!-- <button type="submit" class="btn btn-primary">
             Launch demo modal
           </button> -->
-          <footer class="footer">
-            <div class="footer-contain text-center">
+          <footer class="footer" style="margin-top: 27px;">
+            <div class="footer-contain ">
               <a class="f" href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
               <a class="t" href="https://www.twitter.com/"><i class="social-icon fab fa-twitter fa-1x"></i></a>
               <a class="i" href="https://www.instagram.com/"><i class="social-icon fab fa-instagram fa-1x"></i></a>
               <a class="y" href="https://www.youtube.com/"><i class="social-icon fab fa-youtube fa-1x"></i></a>
-              <p class="headercp mb-0">© Copyright 2020 Book Rack</p>
+              <p class="headercp mb-0" style="padding-right: 2rem;">© Copyright 2020 Book Rack</p>
             </div>
           </footer>
 
