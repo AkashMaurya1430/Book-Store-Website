@@ -142,7 +142,7 @@
       <h3>Books Owned </h3>
       <div class="row">
         <%  allbooks.forEach(function(book){ %>
-        <% if(book.Price>=1){book.ownedBy.forEach(function(ele){if(ele == userData._id) %>
+        <% if(book.Price>=1){book.ownedBy.forEach(function(ele){if(ele === userData._id) %>
         <div class="col-lg-2 col-sm-12">
           <div class="cont">
             <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
@@ -151,11 +151,9 @@
                 <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><i class="fa fa-book"
                     aria-hidden="true"></i> Read</a>
               </div>
-
             </div>
           </div>
         </div>
-
         <% }) %>
         <% } %>
         <% }) %>

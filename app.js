@@ -187,6 +187,7 @@ app.get("/Paid", function (req, res) {
 
 app.get("/login", function (req, res) {
     res.render("login")
+    userData = {}
 })
 
 app.get("/signUp", function (req, res) {
@@ -257,7 +258,7 @@ app.post('/uploadbook', function (req, res) {
             i++;
         });
     }
-    console.log("Book Data", req.body);
+    // console.log("Book Data", req.body);
     const book = new Book({
         name: req.body.name,
         category: req.body.category,
