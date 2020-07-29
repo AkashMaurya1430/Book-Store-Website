@@ -35,12 +35,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown active">
-          <!-- <form action="/Home" method="get">
-             <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i>
+          <form action="/Home" method="get">
+            <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i>
               Home</button>
-            </form> -->
-          <a href="/Home" class="nav-link btn btn-link" style="float: left;"><i class="fa fa-home"
-              aria-hidden="true"></i> Home</a>
+          </form>
+          <!-- <a href="/Home" class="nav-link btn btn-link" style="float: left;"><i class="fa fa-home"
+              aria-hidden="true"></i> Home</a> -->
         </li>
 
         <li class="nav-item dropdown">
@@ -142,10 +142,10 @@
 
   <div class="container">
     <div class="booksBought">
-      <h3>Owned Books</h3>
+      <h3>Books Owned </h3>
       <div class="row">
-        <!-- <%  booker.forEach(function(book){ %>
-        <% if(book.Price>0){book.ownedBy.forEach(function(ele){ if(ele === userData._id){%>
+        <%  allbooks.forEach(function(book){ %>
+        <% if(book.Price>=1){book.ownedBy.forEach(function(ele){if(ele == userData._id) %>
         <div class="col-lg-2 col-sm-12">
           <div class="cont">
             <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
@@ -155,10 +155,10 @@
             </div>
           </div>
         </div>
-        <%}%>
-        <%})%>
-        <%}%>
-        <% }) %> -->
+
+        <% }) %>
+        <% } %>
+        <% }) %>
       </div>
     </div>
   </div>
