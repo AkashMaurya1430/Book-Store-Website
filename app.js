@@ -283,13 +283,13 @@ app.get('/readbook', function (req, res) {
     })
 });
 
-app.post('/buy', function (req, res) {
-    var id = req.query.id;
-    console.log(id);
-    Book.findByIdAndUpdate({ _id: id }, { $push: { ownedBy: [userData._id] } }).then((book, err) => {
-        res.redirect("Home");
-        console.log("Bought");
-    })
-});
+// app.post('/buy', function (req, res) {
+//     var id = req.query.id;
+//     console.log(id);
+//     Book.findByIdAndUpdate({ _id: id }, { $push: { ownedBy: [userData._id] } }).then((book, err) => {
+//         res.redirect("Home");
+//         console.log("Bought");
+//     })
+// });
 
 // Book.findByAndUpdate({ Price: { $gt: 0 } }, { $addFields: { ownedBy: mongoose.Schema.ObjectId } });
