@@ -34,12 +34,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <form action="/Home" method="get">
-            <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i>
+        <li class="nav-item dropdown active">
+          <!-- <form action="/Home" method="get">
+             <button type="submit" class="nav-link btn btn-link"><i class="fa fa-home" aria-hidden="true"></i>
               Home</button>
-          </form>
-        </li>
+            </form> -->
+            <a href="/Home" class="nav-link btn btn-link" style="float: left;"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+          </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -70,8 +71,11 @@
 
         </li>
         <li class="nav-item">
-          <button style="color: #3e585e;" type="submit" class="btn btn-link" data-toggle="modal"
-            data-target="#addBookModal">Create Your Own Book</button>
+          <!-- <button style="color: #3e585e;" type="submit" class="btn btn-link" data-toggle="modal"
+            data-target="#addBookModal">Create Your Own Book</button> -->
+            <a href="#" style="color: #3e585e; text-decoration: none; font-weight: 600;float: left;" class="nav-link btn btn-warning btn-link" data-toggle="modal"
+            data-target="#addBookModal"><i class="fa fa-pencil" aria-hidden="true"></i>
+            Create Your Own Book </a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -82,12 +86,14 @@
             <%= userData.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">My Account</a>
-            <a class="dropdown-item" href="#">Science Fiction</a>
-            <a class="dropdown-item" href="#">Fantasy</a>
-            <a class="dropdown-item" href="#">Romance</a>
-            <a class="dropdown-item" href="#">Horror</a>
-
+            <a class="dropdown-item" href="/Home">My Account</a>
+            <a class="dropdown-item" href="/Adventure">Adventure</a>
+            <a class="dropdown-item" href="/ScienceFiction">Science Fiction</a>
+            <a class="dropdown-item" href="/Fantasy">Fantasy</a>
+            <a class="dropdown-item" href="/Romance">Romance</a>
+            <a class="dropdown-item" href="/Mystery">Mystery</a>
+            <a class="dropdown-item" href="/Horror">Horror</a>
+          </div>
         </li>
       </ul>
     </div>
@@ -148,7 +154,11 @@
           <div class="cont">
             <a href=""> <img src="<%=book.imageUrl %>" class="wide image" alt=""></a>
             <div class="middle">
-              <div class="text"><button href class="btn btn-primary read"><a href="/readbook?id=<%=book._id%>">Read book</a></button></div>
+              <div class="text"><a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+                <i class="fa fa-book" aria-hidden="true"></i> Read Book
+                <%}else{%>
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Book<%}%>
+              </a></div>
             </div>
           </div>
 
@@ -356,9 +366,13 @@
             <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 60%;">
               <div class="modal-content">
                 <div class="modal-header pb-0">
-                  <div class="row no-gutters">
+                  <!-- <div class="row no-gutters">
                     <h3> Add New Book</h3>
-                  </div>
+                  </div> -->
+                  <h4 class="modal-title">Add New Book</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
                 </div>
                 <div class="modal-body">
                   <div class="row no-gutters">
