@@ -5,6 +5,7 @@
     left: 0;
     right: 0;
     background-color: white;
+    overflow-y: hidden;
 }
 
 .modal-header{padding: 0.5rem 1rem;
@@ -12,7 +13,7 @@
 }
 
 .modal-body{
-    padding: 0 15rem;
+    /* padding: 0 15rem; */
     font-size: 1.5rem;
     text-align: justify;
     color: #7c7c7c;
@@ -24,7 +25,7 @@
 .closeModalBtn{
     background-color: transparent;
     border:1px solid rgb(168, 104, 19);
-    margin-right: 8rem;
+    /* margin-right: 8rem; */
 }
 
 .nextPageBtn{
@@ -53,4 +54,16 @@
     margin-bottom: 2rem;
     margin-top: 1rem;
     font-family: "marcellus";
+}
+
+.storyPart{
+    padding: 0 15rem; 
+    border-bottom: 1px solid grey;
+    padding-bottom: 3rem;
+}
+
+.storyPart:last-child{
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
 }

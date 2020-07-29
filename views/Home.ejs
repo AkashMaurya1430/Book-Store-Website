@@ -102,13 +102,13 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/Intro.png" class="d-block w-100" alt="..." >
+            <img src="/Intro.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./1.jpg" class="d-block w-100" alt="..." >
+            <img src="./1.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./Library At your one Cliick (1).jpg" class="d-block w-100" alt="..." >
+            <img src="./Library At your one Cliick (1).jpg" class="d-block w-100" alt="...">
           </div>
 
         </div>
@@ -118,7 +118,7 @@
         </a>
         <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
     </div>
@@ -152,15 +152,20 @@
             </div>
           </div>
 
-          <form action="/Adventure" method="get" style="padding-bottom: 10px;">
-            <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
+
+          <form action="/<%= book.Price %>" method="get">
+            <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;">
+              <%if(book.Price==0){ %>
+              Free
+              <%}else{%>
+              Paid<%}%>
             </button>
           </form>
-          <form action="/<%= book.Price %>" method="get">
-            <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %> </button>
-          </form>
-
-          
+          <a href="/readbook?id=<%=book._id%>">
+              <div class="middle">
+                <div class="text"><button class="btn btn-primary ">Read More</button></div>
+              </div>
+              </a>
         </div>
         <% }) %>
       </div>
@@ -188,11 +193,20 @@
               <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
               </button>
             </form>
+
+
             <form action="/<%= book.Price %>" method="get">
-              <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
+              <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
+                Free
+                <%}else{%>
+                Paid<%}%>
               </button>
             </form>
-            
+            <a href="/readbook?id=<%=book._id%>">
+                <div class="middle">
+                  <div class="text"><button class="btn btn-primary ">Read More</button></div>
+                </div>
+                </a>
           </div>
 
           <% }) %>
@@ -216,15 +230,19 @@
                 <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
               </div>
             </div>
-            <form action="/Horror" method="get" style="padding-bottom: 10px;">
-              <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-              </button>
-            </form>
+
             <form action="/<%= book.Price %>" method="get">
-              <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
+              <button type="button" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
+                Free
+                <%}else{%>
+                Paid<%}%>
               </button>
             </form>
-            
+            <a href="/readbook?id=<%=book._id%>">
+                <div class="middle">
+                  <div class="text"><button class="btn btn-primary ">Read More</button></div>
+                </div>
+                </a>
           </div>
 
           <% }) %>
@@ -250,15 +268,19 @@
                   <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
                 </div>
               </div>
-              <form action="/Romance" method="get" style="padding-bottom: 10px;">
-                <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-                </button>
-              </form>
+
               <form action="/<%= book.Price %>" method="get">
-                <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
+                <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%if(book.Price==0){ %>
+                  Free
+                  <%}else{%>
+                  Paid<%}%>
                 </button>
               </form>
-              
+              <a href="/readbook?id=<%=book._id%>">
+                  <div class="middle">
+                    <div class="text"><button class="btn btn-primary ">Read More</button></div>
+                  </div>
+                  </a>
             </div>
 
             <% }) %>
@@ -284,15 +306,20 @@
                     <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
                   </div>
                 </div>
-                <form action="/ScienceFiction" method="get" style="padding-bottom: 10px;">
-                  <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.category  %>
-                  </button>
-                </form>
+
                 <form action="/<%= book.Price %>" method="get">
-                  <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
+                  <button type="submit" class="btn btn-light btn-sm"
+                    style="border-radius: 100px;"><%if(book.Price==0){ %>
+                    Free
+                    <%}else{%>
+                    Paid<%}%>
                   </button>
                 </form>
-                
+                <a href="/readbook?id=<%=book._id%>">
+                    <div class="middle">
+                      <div class="text"><button class="btn btn-primary ">Read More</button></div>
+                    </div>
+                    </a>
               </div>
 
               <% }) %>
@@ -318,23 +345,29 @@
                       <div class="text"><button class="btn btn-primary read ">Read Book</button></div>
                     </div>
                   </div>
-                  <form action="/Mystery" method="get" style="padding-bottom: 10px;">
-                    <button type="submit" class="btn btn-light btn-sm"
-                      style="border-radius: 100px;"><%= book.category  %> </button>
-                  </form>
+
                   <form action="/<%= book.Price %>" method="get">
-                    <button type="submit" class="btn btn-light btn-sm" style="border-radius: 100px;"><%= book.Price %>
+                    <button type="submit" class="btn btn-light btn-sm"
+                      style="border-radius: 100px;"><%if(book.Price==0){ %>
+                      Free
+                      <%}else{%>
+                      Paid<%}%>
                     </button>
                   </form>
-                  
+                  <a href="/readbook?id=<%=book._id%>">
+                      <div class="middle">
+                        <div class="text"><button class="btn btn-primary ">Read More</button></div>
+                      </div>
+                      </a>
                 </div>
 
                 <% }) %>
               </div>
             </div>
           </div>
-
-
+          <!-- <button type="submit" class="btn btn-primary">
+            Launch demo modal
+          </button> -->
           <footer class="footer">
             <div class="footer-contain text-center">
               <a class="f" href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f fa-1x"></i></a>
@@ -345,7 +378,7 @@
             </div>
           </footer>
 
-          <!-- show Book Details modal -->
+          <!-- Add Book Details modal -->
           <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 60%;">
@@ -436,7 +469,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-6">
+                        <!-- <div class="col-6">
                           <div class="row no-gutters">
                             <label for="chapterTitle">Chapter Title</label>
                             <input type="text" class="form-control" id="chapterTitle" placeholder="Title"
@@ -447,12 +480,12 @@
                           </div>
                           <div class="row no-gutters mt-2">
                             <label for="story">Story</label>
-                            <textarea name="story" id="story" class="form-control col-12" ]></textarea>
+                            <textarea name="story" id="story" class="form-control col-12"></textarea>
                             <div class="invalid-feedback">
                               Type your Story
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -466,6 +499,7 @@
           </div>
 
           <script src="/homepage.js"></script>
+          <script src="../app.js"></script>
           <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
           <script src="jquery.min.js"></script>
           <script src="numscroller-1.0.js"></script>

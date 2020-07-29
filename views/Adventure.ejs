@@ -124,12 +124,19 @@
             </button><br><br>
           </form>
         </div>
-        <%if (book.price === "paid"){%>
-          <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Buy</a>
+        <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><%if(book.Price==0){ %>
+          <i class="fa fa-book" aria-hidden="true"></i> Read
+          <%}else{%>
+            <i class="fa fa-book" aria-hidden="true"></i> Buy<%}%>
+        </a>
+        <!-- <%if (book.price === "paid"){%>
+          
           <%} else { %>
             <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a>
-          <% } %>
+          <% } %> -->
         <!-- <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a> -->
+        <!-- <a href="/readbook?id=<%=book._id%>" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i>
+          Read</a> -->
       </div>
     </div>
 
