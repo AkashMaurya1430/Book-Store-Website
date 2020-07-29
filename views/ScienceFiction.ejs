@@ -28,11 +28,11 @@
 </head>
 
 <body>
-                       <!-- Navbar -->
+  <!-- Navbar -->
 
-    
 
-                       <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top"
     style=" padding: 2px; background-color: #7db0bd;font-size: large;">
     <a class="navbar-brand" href="#"><img class="logo" src="logo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -104,7 +104,7 @@
     </div>
   </nav>
 
-        
+
 
 
 
@@ -130,7 +130,7 @@
           <form action="/<%=  book.Price  %> " method="get">
             <!-- <button type="button" style=" border-radius: 39px;" class="btn btn-light btn-sm"><%= book.category  %>
             </button> -->
-            <button type="submit" style=" border-radius: 39px;" class="btn btn-light btn-sm"><%= book.Price %>
+            <button type="submit" style=" border-radius: 39px;" class="btn btn-light btn-sm"><%= book.Price %> Rs
             </button><br><br>
           </form>
 
@@ -162,136 +162,117 @@
               <p class="headercp mb-0">© Copyright 2020 Book Rack</p>
             </div>
           </footer>
-<!-- Add Book Details modal -->
-          <div class="modal fade" id="addBookModal" tabindex="-1"
-role="dialog" aria-labelledby="exampleModalCenterTitle"
-aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered"
-  role="document" style="max-width: 60%;">
-  <div class="modal-content">
-    <div class="modal-header pb-0">
-        <h4 class="modal-title"> Add New Book</h4>
-        <button type="button" class="close" data-dismiss="modal">
-          &times;
-      </button>
-      
-    </div>
-    <div class="modal-body">
-      <div class="row no-gutters">
-        <form class="needs-validation w-100"
-          id="addBookForm" action="/uploadbook"
-          method="POST" novalidate>
-          <div class="form-row">
-            <!-- Book Name -->
-            <div class="col-6">
-              <label for="bookName">Book name</label>
-              <input type="text" class="form-control"
-                id="bookName" placeholder="Book name"
-                name="name" required>
-              <div class="invalid-feedback">
-                Enter Name of Your Book.
-              </div>
-            </div>
-            <!-- Category -->
-            <div class="col-6">
-              <label for="category">Category</label>
-              <input type="text" class="form-control"
-                id="category" placeholder="Category"
-                name="category" list="genre" required>
-              <div class="invalid-feedback">
-                Select a Category
-              </div>
-              <datalist id="genre">
-                <option value="Science Fiction">
-                </option>
-                <option value="Fantasy"></option>
-                <option value="Adventure"></option>
-                <option value="Mystery"></option>
-                <option value="Romance"></option>
-                <option value="Horror"></option>
-              </datalist>
-            </div>
-          </div>
-          <div class="form-row mt-2">
-            <div class="col-12">
-              <label for="category">Description</label>
-              <textarea name="description" id=""
-                class="form-control col-12"
-                required></textarea>
-              <div class="invalid-feedback">
-                Enter Description
-              </div>
-            </div>
-          </div>
-          <div class="form-row mt-2">
-            <div class="col-6">
-              <label for="price">Price</label>
-              <input type="text" class="form-control"
-                id="price" placeholder="Enter cost"
-                name="Price" required>
-              <div class="invalid-feedback">
-                Enter Cost
-              </div>
-            </div>
-            <div class="col-6">
-              <label for="imageUrl">Upload Cover Image
-                Url</label>
-              <input type="text" class="form-control"
-                id="form-control" name="imageUrl"
-                required>
-              <div class="invalid-feedback">
-                Choose image
-              </div>
-            </div>
-          </div>
+          <!-- Add Book Details modal -->
+          <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 60%;">
+              <div class="modal-content">
+                <div class="modal-header pb-0">
+                  <h4 class="modal-title"> Add New Book</h4>
+                  <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                  </button>
 
-          <!-- Story -->
-          <div class="form-row mt-2" id="addChapterDiv">
-            <div class="col-12">
-              <h5 style="float: left;">Add Chapters</h5>
-              <div class="btn btn-primary float-right"
-                onclick="addChapter()">
-                Add More
-                Chapter's
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="row no-gutters">
-                <label for="chapterTitle">Chapter
-                  Title</label>
-                <input type="text" class="form-control"
-                  id="chapterTitle"
-                  placeholder="Enter cost"
-                  name="chapterName" required>
-                <div class="invalid-feedback">
-                  Give Chapter Title
                 </div>
-              </div>
-              <div class="row no-gutters mt-2">
-                <label for="story">Story</label>
-                <textarea name="story" id="story"
-                  class="form-control col-12"
-                  required></textarea>
-                <div class="invalid-feedback">
-                  Type your Story
+                <div class="modal-body">
+                  <div class="row no-gutters">
+                    <form class="needs-validation w-100" id="addBookForm" action="/uploadbook" method="POST" novalidate>
+                      <div class="form-row">
+                        <!-- Book Name -->
+                        <div class="col-6">
+                          <label for="bookName">Book name</label>
+                          <input type="text" class="form-control" id="bookName" placeholder="Book name" name="name"
+                            required>
+                          <div class="invalid-feedback">
+                            Enter Name of Your Book.
+                          </div>
+                        </div>
+                        <!-- Category -->
+                        <div class="col-6">
+                          <label for="category">Category</label>
+                          <input type="text" class="form-control" id="category" placeholder="Category" name="category"
+                            list="genre" required>
+                          <div class="invalid-feedback">
+                            Select a Category
+                          </div>
+                          <datalist id="genre">
+                            <option value="Science Fiction">
+                            </option>
+                            <option value="Fantasy"></option>
+                            <option value="Adventure"></option>
+                            <option value="Mystery"></option>
+                            <option value="Romance"></option>
+                            <option value="Horror"></option>
+                          </datalist>
+                        </div>
+                      </div>
+                      <div class="form-row mt-2">
+                        <div class="col-12">
+                          <label for="category">Description</label>
+                          <textarea name="description" id="" class="form-control col-12" required></textarea>
+                          <div class="invalid-feedback">
+                            Enter Description
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row mt-2">
+                        <div class="col-6">
+                          <label for="price">Price</label>
+                          <input type="text" class="form-control" id="price" placeholder="Enter cost" name="Price"
+                            required>
+                          <div class="invalid-feedback">
+                            Enter Cost
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <label for="imageUrl">Upload Cover Image
+                            Url</label>
+                          <input type="text" class="form-control" id="form-control" name="imageUrl" required>
+                          <div class="invalid-feedback">
+                            Choose image
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Story -->
+                      <div class="form-row mt-2" id="addChapterDiv">
+                        <div class="col-12">
+                          <h5 style="float: left;">Add Chapters</h5>
+                          <div class="btn btn-primary float-right" onclick="addChapter()">
+                            Add More
+                            Chapter's
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="row no-gutters">
+                            <label for="chapterTitle">Chapter
+                              Title</label>
+                            <input type="text" class="form-control" id="chapterTitle" placeholder="Enter cost"
+                              name="chapterName" required>
+                            <div class="invalid-feedback">
+                              Give Chapter Title
+                            </div>
+                          </div>
+                          <div class="row no-gutters mt-2">
+                            <label for="story">Story</label>
+                            <textarea name="story" id="story" class="form-control col-12" required></textarea>
+                            <div class="invalid-feedback">
+                              Type your Story
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Publish
+                          Book</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal">Close</button>
-            <button type="submit"
-              class="btn btn-success">Publish
-              Book</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 
           <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
