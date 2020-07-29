@@ -124,7 +124,12 @@
             </button><br><br>
           </form>
         </div>
-        <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a>
+        <%if (book.price === "paid"){%>
+          <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Buy</a>
+          <%} else { %>
+            <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a>
+          <% } %>
+        <!-- <a href="#" class="btn btn-primary Read"><i class="fa fa-book" aria-hidden="true"></i> Read</a> -->
       </div>
     </div>
 
