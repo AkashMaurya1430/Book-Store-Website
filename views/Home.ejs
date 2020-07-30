@@ -158,7 +158,7 @@
         <% }) %>
         <% } %>
         <% }) %>
-        
+
       </div>
     </div>
   </div>
@@ -194,12 +194,12 @@
             </div>
           </div>
           <p class="card-title"><%= book.name %> </p>
-          <form action="/<%= book.Price %>" method="get">
-                  <button type="button" class="btn btn-light btn-sm" style="border-radius: 10px;letter-spacing: 1px;">
-                    <%if(book.Price==0){ %>
-                    Free
-                    <%}else{%>
-                    Paid<%}%>
+                  <form action="/<%= book.Price %>" method="get">
+                    <button type="button" class="btn btn-light btn-sm" style="border-radius: 10px;letter-spacing: 1px;">
+                      <%if(book.Price==0){ %>
+                      Free
+                      <%}else{%>
+                      Paid<%}%>
             </button>
           </form>
          
@@ -237,12 +237,13 @@
                   </div>
 
                   <p class="card-title" style="font-weight: 550;"><%= book.name %> </p>
-                  <form action="/<%= book.Price %>" method="get">
-                          <button type="button" class="btn btn-light btn-sm" style="border-radius: 10px;letter-spacing: 1px;">
-                            <%if(book.Price==0){ %>
-                            Free
-                            <%}else{%>
-                            Paid<%}%>
+                          <form action="/<%= book.Price %>" method="get">
+                            <button type="button" class="btn btn-light btn-sm"
+                              style="border-radius: 10px;letter-spacing: 1px;">
+                              <%if(book.Price==0){ %>
+                              Free
+                              <%}else{%>
+                              Paid<%}%>
                   </button>
                 </form>
                
@@ -280,12 +281,13 @@
                     </div>
 
                     <p class="card-title"><%= book.name %> </p>
-                    <form action="/<%= book.Price %>" method="get">
-                                  <button type="button" class="btn btn-light btn-sm" style="border-radius: 10px;letter-spacing: 1px;">
-                                    <%if(book.Price==0){ %>
-                                    Free
-                                    <%}else{%>
-                                    Paid<%}%>
+                                  <form action="/<%= book.Price %>" method="get">
+                                    <button type="button" class="btn btn-light btn-sm"
+                                      style="border-radius: 10px;letter-spacing: 1px;">
+                                      <%if(book.Price==0){ %>
+                                      Free
+                                      <%}else{%>
+                                      Paid<%}%>
                     </button>
                   </form>
                  
@@ -323,13 +325,13 @@
                       </div>
 
                       <p class="card-title"><%= book.name %> </p>
-                      <form action="/<%= book.Price %>" method="get">
-                                          <button type="button" class="btn btn-light btn-sm"
-                                            style="border-radius: 10px;letter-spacing: 1px;">
-                                            <%if(book.Price==0){ %>
-                                            Free
-                                            <%}else{%>
-                                            Paid<%}%>
+                                          <form action="/<%= book.Price %>" method="get">
+                                            <button type="button" class="btn btn-light btn-sm"
+                                              style="border-radius: 10px;letter-spacing: 1px;">
+                                              <%if(book.Price==0){ %>
+                                              Free
+                                              <%}else{%>
+                                              Paid<%}%>
                         </button>
                       </form>
                      
@@ -368,13 +370,13 @@
                         </div>
 
                         <p class="card-title"><%= book.name %> </p>
-                        <form action="/<%= book.Price %>" method="get">
-                                                  <button type="button" class="btn btn-light btn-sm"
-                                                    style="border-radius: 10px;letter-spacing: 1px;">
-                                                    <%if(book.Price==0){ %>
-                                                    Free
-                                                    <%}else{%>
-                                                    Paid<%}%>
+                                                  <form action="/<%= book.Price %>" method="get">
+                                                    <button type="button" class="btn btn-light btn-sm"
+                                                      style="border-radius: 10px;letter-spacing: 1px;">
+                                                      <%if(book.Price==0){ %>
+                                                      Free
+                                                      <%}else{%>
+                                                      Paid<%}%>
                             </button>
                           </form>
                          
@@ -414,13 +416,13 @@
                           </div>
 
                           <p class="card-title"><%= book.name %> </p>
-                          <form action="/<%= book.Price %>" method="get">
-                                                          <button type="button" class="btn btn-light btn-sm"
-                                                            style="border-radius: 10px;letter-spacing: 1px;">
-                                                            <%if(book.Price==0){ %>
-                                                            Free
-                                                            <%}else{%>
-                                                            Paid<%}%>
+                                                          <form action="/<%= book.Price %>" method="get">
+                                                            <button type="button" class="btn btn-light btn-sm"
+                                                              style="border-radius: 10px;letter-spacing: 1px;">
+                                                              <%if(book.Price==0){ %>
+                                                              Free
+                                                              <%}else{%>
+                                                              Paid<%}%>
                                                             </button>
                                                           </form>
                                                         
@@ -495,7 +497,7 @@
                                                               <div class="form-row mt-2">
                                                                 <div class="col-12">
                                                                   <label for="category">Description</label>
-                                                                  <textarea name="description" id=""
+                                                                  <textarea name="description" id="" placeholder="Plot"
                                                                     class="form-control col-12" required></textarea>
                                                                   <div class="invalid-feedback">
                                                                     Enter Description
@@ -515,7 +517,8 @@
                                                                   <label for="imageUrl">Upload Cover Image
                                                                     Url</label>
                                                                   <input type="text" class="form-control"
-                                                                    id="form-control" name="imageUrl" required>
+                                                                    id="form-control" name="imageUrl"
+                                                                    placeholder="Image Url" required>
                                                                   <div class="invalid-feedback">
                                                                     Choose image
                                                                   </div>
@@ -537,7 +540,7 @@
                                                                     <label for="chapterTitle">Chapter
                                                                       Title</label>
                                                                     <input type="text" class="form-control"
-                                                                      id="chapterTitle" placeholder="Enter cost"
+                                                                      id="chapterTitle" placeholder="Name Of Chapter"
                                                                       name="chapterName" required>
                                                                     <div class="invalid-feedback">
                                                                       Give Chapter Title
@@ -546,7 +549,8 @@
                                                                   <div class="row no-gutters mt-2">
                                                                     <label for="story">Story</label>
                                                                     <textarea name="story" id="story"
-                                                                      class="form-control col-12" required></textarea>
+                                                                      class="form-control col-12 p-1 pl-2"
+                                                                      placeholder="Story" required></textarea>
                                                                     <div class="invalid-feedback">
                                                                       Type your Story
                                                                     </div>
@@ -554,7 +558,7 @@
                                                                 </div>
 
                                                               </div>
-                                                              <div class="modal-footer">
+                                                              <div class="modal-footer mt-3">
                                                                 <button type="button" class="btn btn-secondary"
                                                                   data-dismiss="modal">Close</button>
                                                                 <button type="submit" class="btn btn-success">Publish
